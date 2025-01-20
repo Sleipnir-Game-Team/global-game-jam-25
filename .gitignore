@@ -27,3 +27,5 @@ mono_crash.*.json
 **.asd
 
 **.tmp
+.stignore
+/.stfolder
