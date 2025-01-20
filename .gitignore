@@ -13,3 +13,17 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+/assets/.stfolder
+/assets/.stignore
+**.jpg
+**.png
+**.svg
+**.ogg
+**.mp3
+**.ttf
+**.wav
+**.tpsheet
+**.asd
+
+**.tmp
