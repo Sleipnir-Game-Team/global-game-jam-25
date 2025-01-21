@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://nmkio3jrvuvk"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rgmh6"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rgmh6")
+
+[node name="HotCoffee" type="Button" parent="."]
+offset_left = 196.0
+offset_top = 283.0
+offset_right = 430.0
+offset_bottom = 337.0
+text = "CAFÉ QUENTE
+KKKKKKKKKKKKKKKKKKKKKK"
+
+[node name="ColdCoffee" type="Button" parent="."]
+offset_left = 676.0
+offset_top = 281.0
+offset_right = 910.0
+offset_bottom = 335.0
+text = "CAFÉ GELADO
+LOL LMAO ROFL OMEGALUL"
+
+[connection signal="pressed" from="HotCoffee" to="." method="_on_hot_coffee_pressed"]
+[connection signal="pressed" from="ColdCoffee" to="." method="_on_cold_coffee_pressed"]
