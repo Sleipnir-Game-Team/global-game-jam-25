@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvjigyi4c34d"]
+[gd_scene load_steps=6 format=3 uid="uid://dvjigyi4c34d"]
 
+[ext_resource type="Script" path="res://coffee/hot/4_pour/pour.gd" id="1_1hgyr"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
 [ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
 
@@ -13,6 +14,7 @@ point_count = 7
 radius = 32.0
 
 [node name="Pour" type="Node2D"]
+script = ExtResource("1_1hgyr")
 
 [node name="Xicara" type="Sprite2D" parent="."]
 position = Vector2(272.325, 568)
@@ -20,6 +22,7 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_sosn2")
 
 [node name="Pivot" type="Node2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(504.325, 392)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
@@ -31,10 +34,25 @@ offset = Vector2(0, -335)
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_k1eel")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="OsuSlider" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(816, 160)
+rotates = false
+loop = false
 
-[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+[node name="OsuSliderArea" type="Area2D" parent="Path2D/OsuSlider"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/OsuSlider/OsuSliderArea"]
+shape = SubResource("CircleShape2D_nxf58")
+
+[node name="LeftBorder" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(264, 160)
+
+[node name="RightBorder" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(816, 160)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
-shape = SubResource("CircleShape2D_nxf58")
+[connection signal="mouse_entered" from="Path2D/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]
