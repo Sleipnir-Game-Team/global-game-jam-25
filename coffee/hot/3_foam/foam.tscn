@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c613b2vryg60s"]
 
-[ext_resource type="Script" path="res://coffee/hot/3_foam/foam.gd" id="1_bw3gi"]
+[ext_resource type="Script" path="res://coffee/shared/foam.gd" id="1_bw3gi"]
 [ext_resource type="PackedScene" uid="uid://xavkvuxabiny" path="res://components/draggable.tscn" id="2_1wpi1"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_m00sn"]
 

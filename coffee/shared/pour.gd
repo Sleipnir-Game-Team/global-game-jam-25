@@ -8,12 +8,15 @@ extends Node2D
 var mouse_held_down: bool = false
 var mouse_on_slider: bool = false
 
+## Intencionalmente isso está feito de um jeito em que não é preciso acompanhar a area
+## com o mouse, como seria em OSU de verdade, mas da pra trocar se ficar melhor
 func _process(_delta: float) -> void:
 	if mouse_held_down:
 		var percentage: float = (get_global_mouse_position().x - left_border.global_position.x) / (right_border.global_position.x - left_border.global_position.x)
 		percentage = clamp(percentage, 0, 1)
 		osu_slider.progress_ratio = 1 - percentage
 		pivot.rotation = -PI/2 + percentage * (PI/2)
+		osu_slider.rotation = -PI/2 + percentage * (PI/2)
 
 
 

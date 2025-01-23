@@ -18,6 +18,8 @@ signal end(foam: float)
 
 func _process(delta: float) -> void:
 	if milk + foam >= 1:
+		print("Milk: %s" % milk)
+		print("Foam: %s" % foam)
 		return;
 		
 	foam_line.position.y = pitcher_bottom.position.y + (pitcher_top.position.y -  pitcher_bottom.position.y) * (milk + foam)
@@ -28,6 +30,8 @@ func _process(delta: float) -> void:
 		else:
 			milk += delta * increment_per_second
 	
+	if milk + foam >= 1:
+		end.emit(foam)
 
 func _on_frother_area_entered(_area: Area2D) -> void:
 	frothing = true

@@ -1,25 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvjigyi4c34d"]
+[gd_scene load_steps=6 format=3 uid="uid://dkkxvw1uxrmpf"]
 
-[ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_1hgyr"]
-[ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
-[ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
+[ext_resource type="Texture2D" uid="uid://y2h6btntqetm" path="res://assets/tall_glass.png" id="1_cxl3g"]
+[ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_wbgfq"]
+[ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_nc1ag"]
 
-[sub_resource type="Curve2D" id="Curve2D_k1eel"]
+[sub_resource type="Curve2D" id="Curve2D_n45ej"]
 _data = {
-"points": PackedVector2Array(153.158, 225.513, -153.158, -225.513, 816, 160, 83.1951, -94.7835, -83.1951, 94.7835, 264, 88)
+"points": PackedVector2Array(59.1334, 119.155, -59.1334, -119.155, 816, 160, 247.568, -153.211, -247.568, 153.211, 264, 80)
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efc5l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgfsk"]
 size = Vector2(112, 216)
 
 [node name="Pour" type="Node2D"]
-script = ExtResource("1_1hgyr")
+script = ExtResource("1_wbgfq")
 
-[node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(272.325, 568)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_sosn2")
+[node name="Copo" type="Sprite2D" parent="."]
+position = Vector2(264, 464)
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("1_cxl3g")
 
 [node name="Pivot" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -27,13 +27,13 @@ position = Vector2(504.325, 392)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 position = Vector2(-40, 32)
-texture = ExtResource("1_iggg3")
+texture = ExtResource("2_nc1ag")
 centered = false
 offset = Vector2(0, -335)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
-curve = SubResource("Curve2D_k1eel")
+curve = SubResource("Curve2D_n45ej")
 
 [node name="OsuSlider" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
@@ -42,12 +42,11 @@ rotates = false
 loop = false
 
 [node name="OsuSliderArea" type="Area2D" parent="Path2D/OsuSlider"]
-unique_name_in_owner = true
 position = Vector2(-32, 72)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/OsuSlider/OsuSliderArea"]
-shape = SubResource("RectangleShape2D_efc5l")
+shape = SubResource("RectangleShape2D_vgfsk")
 
 [node name="LeftBorder" type="Marker2D" parent="."]
 unique_name_in_owner = true

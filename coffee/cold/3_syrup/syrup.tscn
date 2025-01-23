@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b08n4aljtjgyu"]
+
+[ext_resource type="Texture2D" uid="uid://bmk5moyf6sxu7" path="res://assets/syrup_pump.png" id="1_i20ou"]
+[ext_resource type="Script" path="res://coffee/cold/3_syrup/syrup.gd" id="1_o6028"]
+[ext_resource type="Texture2D" uid="uid://y2h6btntqetm" path="res://assets/tall_glass.png" id="2_knljx"]
+
+[node name="Syrup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o6028")
+
+[node name="SyrupPump" type="Sprite2D" parent="."]
+position = Vector2(306, 336)
+texture = ExtResource("1_i20ou")
+flip_h = true
+
+[node name="TallGlass" type="Sprite2D" parent="."]
+position = Vector2(517, 404)
+texture = ExtResource("2_knljx")
+
+[node name="PumpButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 252.0
+offset_top = 89.0
+offset_right = 337.0
+offset_bottom = 153.0
+
+[connection signal="pressed" from="PumpButton" to="." method="_on_pump_button_pressed"]

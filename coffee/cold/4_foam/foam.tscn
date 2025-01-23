@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://6muwsgisd6tx"]
+
+[ext_resource type="Script" path="res://coffee/shared/foam.gd" id="1_lblg4"]
+[ext_resource type="PackedScene" uid="uid://xavkvuxabiny" path="res://components/draggable.tscn" id="2_qu7q8"]
+[ext_resource type="Texture2D" uid="uid://y2h6btntqetm" path="res://assets/tall_glass.png" id="2_vkrrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnxcr"]
+size = Vector2(63.1506, 136.039)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2tfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ua4a"]
+size = Vector2(25.4438, 65.0887)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lftpb"]
+size = Vector2(21.3018, 9.1716)
+
+[node name="Foam" type="Node2D"]
+script = ExtResource("1_lblg4")
+
+[node name="Frother" type="Area2D" parent="."]
+position = Vector2(544, 256)
+collision_layer = 0
+collision_mask = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frother"]
+shape = SubResource("RectangleShape2D_nnxcr")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="Tip" type="Area2D" parent="Frother"]
+unique_name_in_owner = true
+position = Vector2(0, 68)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frother/Tip"]
+shape = SubResource("CircleShape2D_v2tfg")
+
+[node name="TallGlass" type="Area2D" parent="."]
+position = Vector2(776, 408)
+scale = Vector2(3.38, 3.38)
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="TallGlass"]
+scale = Vector2(0.138625, 0.14505)
+texture = ExtResource("2_vkrrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TallGlass"]
+shape = SubResource("RectangleShape2D_5ua4a")
+
+[node name="PitcherBottom" type="Marker2D" parent="TallGlass"]
+unique_name_in_owner = true
+position = Vector2(0, 32.5444)
+
+[node name="PitcherTop" type="Marker2D" parent="TallGlass"]
+unique_name_in_owner = true
+position = Vector2(0, -32.5444)
+
+[node name="Draggable" parent="TallGlass" instance=ExtResource("2_qu7q8")]
+
+[node name="FoamLine" type="Area2D" parent="TallGlass"]
+unique_name_in_owner = true
+position = Vector2(-4.29153e-06, 23.6686)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TallGlass/FoamLine"]
+shape = SubResource("RectangleShape2D_lftpb")
+debug_color = Color(0.991694, 0, 0.262175, 0.42)
+
+[connection signal="area_entered" from="Frother" to="." method="_on_frother_area_entered"]
+[connection signal="area_exited" from="Frother" to="." method="_on_frother_area_exited"]
+[connection signal="area_entered" from="Frother/Tip" to="." method="_on_tip_area_entered"]
+[connection signal="area_exited" from="Frother/Tip" to="." method="_on_tip_area_exited"]
