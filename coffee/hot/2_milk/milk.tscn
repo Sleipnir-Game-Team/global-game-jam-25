@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcwysn14v0b8m"]
+
+[ext_resource type="Script" path="res://coffee/hot/2_milk/milk.gd" id="1_ogljj"]
+[ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_vj114"]
+
+[node name="Milk" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ogljj")
+
+[node name="Small" type="Button" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 456.0
+offset_right = 1789.0
+offset_bottom = 1931.0
+scale = Vector2(0.088, 0.082)
+icon = ExtResource("2_vj114")
+expand_icon = true
+
+[node name="Medium" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 408.0
+offset_right = 1199.0
+offset_bottom = 1154.0
+scale = Vector2(0.243, 0.226)
+icon = ExtResource("2_vj114")
+expand_icon = true
+
+[node name="Large" type="Button" parent="."]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 296.0
+offset_right = 1330.0
+offset_bottom = 866.0
+scale = Vector2(0.528, 0.491)
+icon = ExtResource("2_vj114")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Small" to="." method="_on_small_pressed"]
+[connection signal="pressed" from="Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="Large" to="." method="_on_large_pressed"]

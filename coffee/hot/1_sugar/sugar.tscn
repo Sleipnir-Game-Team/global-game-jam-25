@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxodpak5ddnmj"]
 
-[ext_resource type="Script" path="res://coffee/hot/sugar/sugar.gd" id="1_c08lw"]
+[ext_resource type="Script" path="res://coffee/hot/1_sugar/sugar.gd" id="1_c08lw"]
 [ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="1_ecwbm"]
 [ext_resource type="Texture2D" uid="uid://fkxlunc036m0" path="res://assets/acucar.png" id="2_vfufs"]
 

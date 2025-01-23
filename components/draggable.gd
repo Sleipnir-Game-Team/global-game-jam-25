@@ -25,7 +25,7 @@ var _parent_node: Area2D:
 ## Responsible for starting the drag event using the parent's area collision
 func drag_input_handler(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		_drag_offset = _parent_node.get_local_mouse_position()
+		_drag_offset = _parent_node.get_local_mouse_position() * _parent_node.get_screen_transform().get_scale()
 		_dragging = true
 
 ## Event Handler for dragging and dropping the parent.

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvjigyi4c34d"]
+
+[ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
+[ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
+
+[sub_resource type="Curve2D" id="Curve2D_k1eel"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 816, 160, 0, 0, 0, 0, 744, 80, 0, 0, 0, 0, 648, 32, 0, 0, 0, 0, 544, 8, 0, 0, 0, 0, 448, 8, 0, 0, 0, 0, 352, 32, 0, 0, 0, 0, 264, 80)
+}
+point_count = 7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxf58"]
+radius = 32.0
+
+[node name="Pour" type="Node2D"]
+
+[node name="Xicara" type="Sprite2D" parent="."]
+position = Vector2(272.325, 568)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_sosn2")
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(504.325, 392)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+position = Vector2(-40, 32)
+texture = ExtResource("1_iggg3")
+centered = false
+offset = Vector2(0, -335)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_k1eel")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+position = Vector2(816, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+shape = SubResource("CircleShape2D_nxf58")

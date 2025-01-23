@@ -26,6 +26,11 @@ gdscript/warnings/unsafe_method_access=1
 
 project/assembly_name="Global Game Jam 25"
 
+[layer_names]
+
+2d_physics/layer_1="Draggables"
+2d_physics/layer_3="Foam"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

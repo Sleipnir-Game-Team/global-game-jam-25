@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsi4pgumasca7"]
+
+[ext_resource type="Script" path="res://coffee/coffee_making.gd" id="1_dup3p"]
+
+[node name="CoffeeMaking" type="Node2D"]
+script = ExtResource("1_dup3p")
