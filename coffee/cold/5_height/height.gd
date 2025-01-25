@@ -30,3 +30,7 @@ func _on_tip_over_button_down() -> void:
 
 func _on_tip_over_button_up() -> void:
 	tipping = false
+
+
+func _on_next_pressed() -> void:
+	end.emit()

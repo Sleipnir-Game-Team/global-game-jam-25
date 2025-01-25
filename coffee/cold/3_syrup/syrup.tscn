@@ -23,4 +23,14 @@ offset_top = 89.0
 offset_right = 337.0
 offset_bottom = 153.0
 
+[node name="Next" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1089.0
+offset_bottom = 575.0
+text = "NEXT"
+
 [connection signal="pressed" from="PumpButton" to="." method="_on_pump_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

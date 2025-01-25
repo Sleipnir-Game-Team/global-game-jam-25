@@ -69,7 +69,17 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_lftpb")
 debug_color = Color(0.991694, 0, 0.262175, 0.42)
 
+[node name="Next" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1089.0
+offset_bottom = 575.0
+text = "NEXT"
+
 [connection signal="area_entered" from="Frother" to="." method="_on_frother_area_entered"]
 [connection signal="area_exited" from="Frother" to="." method="_on_frother_area_exited"]
 [connection signal="area_entered" from="Frother/Tip" to="." method="_on_tip_area_entered"]
 [connection signal="area_exited" from="Frother/Tip" to="." method="_on_tip_area_exited"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

@@ -30,5 +30,13 @@ offset_top = 56.0
 offset_right = 688.0
 offset_bottom = 112.0
 
+[node name="Next" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1089.0
+offset_bottom = 575.0
+text = "NEXT"
+
 [connection signal="button_down" from="TipOver" to="." method="_on_tip_over_button_down"]
 [connection signal="button_up" from="TipOver" to="." method="_on_tip_over_button_up"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

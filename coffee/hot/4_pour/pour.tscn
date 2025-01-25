@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvjigyi4c34d"]
+[gd_scene load_steps=14 format=3 uid="uid://dvjigyi4c34d"]
 
 [ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_1hgyr"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
 [ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
 [ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milkg_shader.tres" id="3_4xitw"]
 [ext_resource type="Shader" path="res://coffee/shared/teste.gdshader" id="3_v4pmo"]
+[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda_alt.png" id="5_nl0sp"]
 
 [sub_resource type="Curve2D" id="Curve2D_171tu"]
 _data = {
@@ -21,13 +22,14 @@ shader_parameter/is_canvas_group = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6y2"]
 resource_local_to_scene = true
 shader = ExtResource("3_4xitw")
+shader_parameter/Imagem = ExtResource("5_nl0sp")
 
-[sub_resource type="Gradient" id="Gradient_6w7ud"]
+[sub_resource type="Gradient" id="Gradient_8tdoj"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cvvps"]
-gradient = SubResource("Gradient_6w7ud")
+gradient = SubResource("Gradient_8tdoj")
 
 [sub_resource type="Curve2D" id="Curve2D_k1eel"]
 _data = {
@@ -56,6 +58,7 @@ curve = SubResource("Curve2D_171tu")
 
 [node name="SpoutSlider" type="PathFollow2D" parent="SpoutPath"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(472, 120)
 rotates = false
 loop = false
@@ -66,7 +69,8 @@ material = SubResource("ShaderMaterial_r268y")
 [node name="Sprite2D" type="Sprite2D" parent="SpoutPath/SpoutSlider/CanvasGroup"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_pb6y2")
-scale = Vector2(1.35742, 355.625)
+position = Vector2(0, 174)
+scale = Vector2(0.087, 355.625)
 texture = SubResource("GradientTexture1D_cvvps")
 region_rect = Rect2(0, -197.5, 287, 325)
 
@@ -101,33 +105,15 @@ position = Vector2(264, 160)
 unique_name_in_owner = true
 position = Vector2(816, 160)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Next" type="Button" parent="."]
+unique_name_in_owner = true
 visible = false
-position = Vector2(469, 115)
-
-[node name="Marker2D2" type="Marker2D" parent="."]
-visible = false
-position = Vector2(399, 135)
-
-[node name="Marker2D3" type="Marker2D" parent="."]
-visible = false
-position = Vector2(337, 169)
-
-[node name="Marker2D4" type="Marker2D" parent="."]
-visible = false
-position = Vector2(285, 221)
-
-[node name="Marker2D5" type="Marker2D" parent="."]
-visible = false
-position = Vector2(248, 285)
-
-[node name="Marker2D6" type="Marker2D" parent="."]
-visible = false
-position = Vector2(229, 356)
-
-[node name="Marker2D7" type="Marker2D" parent="."]
-visible = false
-position = Vector2(228, 426)
+offset_left = 936.0
+offset_top = 496.0
+offset_right = 1128.0
+offset_bottom = 624.0
+text = "NEXT"
 
 [connection signal="mouse_entered" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
 [connection signal="mouse_exited" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

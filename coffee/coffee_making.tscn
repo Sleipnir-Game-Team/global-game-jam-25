@@ -4,3 +4,4 @@
 
 [node name="CoffeeMaking" type="Node2D"]
 script = ExtResource("1_dup3p")
+coffee_type = 1

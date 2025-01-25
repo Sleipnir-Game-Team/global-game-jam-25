@@ -1,3 +1,4 @@
+class_name CoffeeMaking
 extends Node2D
 
 
@@ -61,6 +62,7 @@ func _on_scene_end(data: Variant) -> void:
 		match [current_scene_index, data, coffee_type]:
 			[_, null, _]: # Received no data - who gives a fuck
 				pass
+				print("NO DATA BUT WHATEVER")
 			[0, _, CoffeeTemperature.HOT]: # (HOT) Sugar Spoons 
 				sugar_spoons = data
 			[0, _, CoffeeTemperature.COLD]: # (COLD) Ice Cubes
