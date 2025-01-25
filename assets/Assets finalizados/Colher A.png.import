@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c63yix1xc48qr"
-path="res://.godot/imported/onda_alt.png-c39457ffe7648dc9e2dae93f813a5623.ctex"
+uid="uid://cn8qk822jnetp"
+path="res://.godot/imported/Colher A.png-e69fb4e15ee9c151c6acaabba2560408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/onda_alt.png"
-dest_files=["res://.godot/imported/onda_alt.png-c39457ffe7648dc9e2dae93f813a5623.ctex"]
+source_file="res://assets/Assets finalizados/Colher A.png"
+dest_files=["res://.godot/imported/Colher A.png-e69fb4e15ee9c151c6acaabba2560408.ctex"]
 
 [params]
 

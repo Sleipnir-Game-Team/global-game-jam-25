@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://c24q003sbnsyh"]
 
-[ext_resource type="Texture2D" uid="uid://4pj1f5jhnuvv" path="res://assets/onda.png" id="1_s0tlr"]
+[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda.png" id="1_s0tlr"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_fxsy0"]
 input_name = "time"
@@ -107,7 +107,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-846.101, -611.323)
 mode = 1
 flags/light_only = false
 nodes/vertex/0/position = Vector2(3800, -700)

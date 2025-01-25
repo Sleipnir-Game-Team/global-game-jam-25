@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dvjigyi4c34d"]
 
 [ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_1hgyr"]
-[ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
-[ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
-[ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milkg_shader.tres" id="3_4xitw"]
+[ext_resource type="Texture2D" uid="uid://xx25b0ms4ah7" path="res://assets/Assets finalizados/Jarra de leite A.png" id="2_fit7v"]
+[ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milk_shader.tres" id="3_4xitw"]
 [ext_resource type="Shader" path="res://coffee/shared/teste.gdshader" id="3_v4pmo"]
-[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda_alt.png" id="5_nl0sp"]
+[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda.png" id="5_nl0sp"]
+[ext_resource type="Texture2D" uid="uid://jwtg2bygom6f" path="res://assets/Assets finalizados/Xicara.png" id="6_beryl"]
 
 [sub_resource type="Curve2D" id="Curve2D_171tu"]
 _data = {
@@ -34,12 +34,12 @@ gradient = SubResource("Gradient_8tdoj")
 
 [sub_resource type="Curve2D" id="Curve2D_k1eel"]
 _data = {
-"points": PackedVector2Array(153.158, 225.513, -153.158, -225.513, 816, 160, 83.1951, -94.7835, -83.1951, 94.7835, 264, 88)
+"points": PackedVector2Array(-33.1871, 236.007, 33.1871, -236.007, 732, 422, 47.6736, 16.0667, -47.6736, -16.0667, 532, 113)
 }
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efc5l"]
-size = Vector2(112, 216)
+size = Vector2(100, 300)
 
 [node name="Pour" type="Node2D"]
 script = ExtResource("1_1hgyr")
@@ -48,17 +48,76 @@ script = ExtResource("1_1hgyr")
 unique_name_in_owner = true
 position = Vector2(504.325, 392)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
-position = Vector2(-40, 32)
-texture = ExtResource("1_iggg3")
-centered = false
-offset = Vector2(0, -335)
+[node name="Jarra" type="Sprite2D" parent="Pivot"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot2" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(504.325, 392)
+rotation = -0.261799
+
+[node name="Jarra" type="Sprite2D" parent="Pivot2"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot3" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(504.325, 392)
+rotation = -0.523598
+
+[node name="Jarra" type="Sprite2D" parent="Pivot3"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot4" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(504.325, 392)
+rotation = -0.785397
+
+[node name="Jarra" type="Sprite2D" parent="Pivot4"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot5" type="Node2D" parent="."]
+visible = false
+position = Vector2(504.325, 392)
+rotation = -1.0472
+
+[node name="Jarra" type="Sprite2D" parent="Pivot5"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot6" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(504.325, 392)
+rotation = -1.309
+
+[node name="Jarra" type="Sprite2D" parent="Pivot6"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
+
+[node name="Pivot7" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(504.325, 392)
+rotation = -1.57079
+
+[node name="Jarra" type="Sprite2D" parent="Pivot7"]
+position = Vector2(169.675, -51)
+texture = ExtResource("2_fit7v")
 
 [node name="SpoutPath" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_171tu")
 
 [node name="SpoutSlider" type="PathFollow2D" parent="SpoutPath"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(472, 120)
 rotates = false
 loop = false
@@ -75,35 +134,35 @@ texture = SubResource("GradientTexture1D_cvvps")
 region_rect = Rect2(0, -197.5, 287, 325)
 
 [node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(272, 555)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_sosn2")
+position = Vector2(264, 556)
+texture = ExtResource("6_beryl")
 
 [node name="HandlePath" type="Path2D" parent="."]
-position = Vector2(-1.52588e-05, 0)
+position = Vector2(27, 25)
 curve = SubResource("Curve2D_k1eel")
 
 [node name="OsuSlider" type="PathFollow2D" parent="HandlePath"]
 unique_name_in_owner = true
-position = Vector2(816, 160)
+position = Vector2(732, 422)
 rotates = false
 loop = false
 
 [node name="OsuSliderArea" type="Area2D" parent="HandlePath/OsuSlider"]
 unique_name_in_owner = true
-position = Vector2(-32, 72)
+position = Vector2(53, -152)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandlePath/OsuSlider/OsuSliderArea"]
+position = Vector2(-3, 2)
 shape = SubResource("RectangleShape2D_efc5l")
 
 [node name="LeftBorder" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(264, 160)
+position = Vector2(238, 308)
 
 [node name="RightBorder" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(816, 160)
+position = Vector2(884, 306)
 
 [node name="Next" type="Button" parent="."]
 unique_name_in_owner = true

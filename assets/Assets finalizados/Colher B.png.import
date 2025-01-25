@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr8mx7r7242nh"
-path="res://.godot/imported/leite_500ml.png-1a9f4e7830a11b5ed788ba627642c5a0.ctex"
+uid="uid://dqudcu0iik6h3"
+path="res://.godot/imported/Colher B.png-31a9247c584e2d4010a7067f66f8de5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/leite_500ml.png"
-dest_files=["res://.godot/imported/leite_500ml.png-1a9f4e7830a11b5ed788ba627642c5a0.ctex"]
+source_file="res://assets/Assets finalizados/Colher B.png"
+dest_files=["res://.godot/imported/Colher B.png-31a9247c584e2d4010a7067f66f8de5b.ctex"]
 
 [params]
 

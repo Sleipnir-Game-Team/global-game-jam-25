@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_wbgfq"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_nc1ag"]
 [ext_resource type="Shader" path="res://coffee/shared/teste.gdshader" id="3_ygcjs"]
-[ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milkg_shader.tres" id="4_0b2mk"]
-[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda_alt.png" id="5_w8jmp"]
+[ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milk_shader.tres" id="4_0b2mk"]
+[ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda.png" id="5_w8jmp"]
 
 [sub_resource type="Curve2D" id="Curve2D_gm3to"]
 _data = {
@@ -22,6 +22,7 @@ shader_parameter/is_canvas_group = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_haqf0"]
 resource_local_to_scene = true
 shader = ExtResource("4_0b2mk")
+shader_parameter/Frequency = null
 shader_parameter/Imagem = ExtResource("5_w8jmp")
 
 [sub_resource type="Gradient" id="Gradient_6w7ud"]

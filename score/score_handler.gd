@@ -13,9 +13,7 @@ func score_calculation(classification: String, total_qnt: Variant, taste_flag: b
 	if not taste_flag:
 		turning_point = 0
 	
-	if total_qnt < turning_point:
-		total_score = 0
-	elif turning_point <= total_qnt:
+	if turning_point <= total_qnt:
 		total_score = 0.25
 	
 	score_dict[classification] = total_score
@@ -25,12 +23,9 @@ func score_classification() -> Dictionary:
 	var worst_score_list: Array = []
 	
 	for classification: String in score_dict:
-		if classification == 'cold':
-			if score_dict[classification] == 0:
-				worst_score_list.append(classification)
-		elif score_dict[classification] == 0:
+		if score_dict[classification] == 0:
 			worst_score_list.append(classification)
-		else:
+		elif classification != "cold":
 			best_score_list.append(classification)
 	
 	var score_data: Dictionary = {
