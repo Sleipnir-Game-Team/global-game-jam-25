@@ -22,6 +22,8 @@ Config_Handler="*res://globals/config_handler.gd"
 UI_Controller="*res://ui/controller/ui_controller.gd"
 Logger="*res://addons/log_and_error/logger.gd"
 Game_Manager="*res://globals/game_manager.gd"
+AudioManager="*res://addons/sleipnir_audio/manager/audio_manager.gd"
+SfxGlobals="*res://addons/sleipnir_audio/sfx/sfx_globals.gd"
 
 [debug]
 
