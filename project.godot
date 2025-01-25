@@ -21,6 +21,7 @@ JsonHandler="*res://globals/json_handler.gd"
 Config_Handler="*res://globals/config_handler.gd"
 UI_Controller="*res://ui/controller/ui_controller.gd"
 Logger="*res://addons/log_and_error/logger.gd"
+Game_Manager="*res://globals/game_manager.gd"
 
 [debug]
 
