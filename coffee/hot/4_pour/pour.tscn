@@ -1,8 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvjigyi4c34d"]
+[gd_scene load_steps=13 format=3 uid="uid://dvjigyi4c34d"]
 
 [ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_1hgyr"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="1_iggg3"]
 [ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="2_sosn2"]
+[ext_resource type="Shader" uid="uid://c24q003sbnsyh" path="res://coffee/shared/pouring_milkg_shader.tres" id="3_4xitw"]
+[ext_resource type="Shader" path="res://coffee/shared/teste.gdshader" id="3_v4pmo"]
+
+[sub_resource type="Curve2D" id="Curve2D_171tu"]
+_data = {
+"points": PackedVector2Array(181.215, -10.7037, -181.215, 10.7037, 472, 120, -15.7841, -115.204, 15.7841, 115.204, 228, 426)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r268y"]
+shader = ExtResource("3_v4pmo")
+shader_parameter/strength = 2.0
+shader_parameter/sample_power = 3
+shader_parameter/is_canvas_group = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6y2"]
+resource_local_to_scene = true
+shader = ExtResource("3_4xitw")
+
+[sub_resource type="Gradient" id="Gradient_6w7ud"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cvvps"]
+gradient = SubResource("Gradient_6w7ud")
 
 [sub_resource type="Curve2D" id="Curve2D_k1eel"]
 _data = {
@@ -16,11 +41,6 @@ size = Vector2(112, 216)
 [node name="Pour" type="Node2D"]
 script = ExtResource("1_1hgyr")
 
-[node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(272.325, 568)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_sosn2")
-
 [node name="Pivot" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(504.325, 392)
@@ -31,22 +51,46 @@ texture = ExtResource("1_iggg3")
 centered = false
 offset = Vector2(0, -335)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="SpoutPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_171tu")
+
+[node name="SpoutSlider" type="PathFollow2D" parent="SpoutPath"]
+unique_name_in_owner = true
+position = Vector2(472, 120)
+rotates = false
+loop = false
+
+[node name="CanvasGroup" type="CanvasGroup" parent="SpoutPath/SpoutSlider"]
+material = SubResource("ShaderMaterial_r268y")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpoutPath/SpoutSlider/CanvasGroup"]
+texture_filter = 2
+material = SubResource("ShaderMaterial_pb6y2")
+scale = Vector2(1.35742, 355.625)
+texture = SubResource("GradientTexture1D_cvvps")
+region_rect = Rect2(0, -197.5, 287, 325)
+
+[node name="Xicara" type="Sprite2D" parent="."]
+position = Vector2(272, 555)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_sosn2")
+
+[node name="HandlePath" type="Path2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
 curve = SubResource("Curve2D_k1eel")
 
-[node name="OsuSlider" type="PathFollow2D" parent="Path2D"]
+[node name="OsuSlider" type="PathFollow2D" parent="HandlePath"]
 unique_name_in_owner = true
 position = Vector2(816, 160)
 rotates = false
 loop = false
 
-[node name="OsuSliderArea" type="Area2D" parent="Path2D/OsuSlider"]
+[node name="OsuSliderArea" type="Area2D" parent="HandlePath/OsuSlider"]
 unique_name_in_owner = true
 position = Vector2(-32, 72)
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/OsuSlider/OsuSliderArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandlePath/OsuSlider/OsuSliderArea"]
 shape = SubResource("RectangleShape2D_efc5l")
 
 [node name="LeftBorder" type="Marker2D" parent="."]
@@ -57,5 +101,33 @@ position = Vector2(264, 160)
 unique_name_in_owner = true
 position = Vector2(816, 160)
 
-[connection signal="mouse_entered" from="Path2D/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
-[connection signal="mouse_exited" from="Path2D/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]
+[node name="Marker2D" type="Marker2D" parent="."]
+visible = false
+position = Vector2(469, 115)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+visible = false
+position = Vector2(399, 135)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+visible = false
+position = Vector2(337, 169)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+visible = false
+position = Vector2(285, 221)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+visible = false
+position = Vector2(248, 285)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+visible = false
+position = Vector2(229, 356)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+visible = false
+position = Vector2(228, 426)
+
+[connection signal="mouse_entered" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
+[connection signal="mouse_exited" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]

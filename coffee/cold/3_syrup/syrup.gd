@@ -1,4 +1,4 @@
-extends Control
+extends CoffeeStep
 
 var pumps: int = 0
 @onready var pump_button: Button = %PumpButton

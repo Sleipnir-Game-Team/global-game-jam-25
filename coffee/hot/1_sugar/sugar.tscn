@@ -4,31 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="1_ecwbm"]
 [ext_resource type="Texture2D" uid="uid://fkxlunc036m0" path="res://assets/acucar.png" id="2_vfufs"]
 
-[node name="Sugar" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Sugar" type="Node2D"]
 script = ExtResource("1_c08lw")
 
 [node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(331, 404)
+position = Vector2(232, 472)
 scale = Vector2(0.479321, 0.578804)
 texture = ExtResource("1_ecwbm")
 
 [node name="AddSugarButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 608.0
-offset_top = 93.0
-offset_right = 926.0
-offset_bottom = 574.0
+offset_left = 456.0
+offset_top = 80.0
+offset_right = 774.0
+offset_bottom = 561.0
 icon = ExtResource("2_vfufs")
 
 [node name="SugarCounterLabel" type="Label" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 150.0
-offset_top = 171.0
-offset_right = 306.0
-offset_bottom = 194.0
+offset_left = 96.0
+offset_top = 176.0
+offset_right = 261.0
+offset_bottom = 199.0
 text = "Colheres de açucar: 0"
 
+[node name="Next" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1089.0
+offset_bottom = 575.0
+text = "NEXT"
+
 [connection signal="pressed" from="AddSugarButton" to="." method="_on_add_sugar_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

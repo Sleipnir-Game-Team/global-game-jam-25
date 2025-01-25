@@ -1,4 +1,4 @@
-extends Control
+extends CoffeeStep
 
 @onready var ice_counter_label: Label = %IceCounterLabel
 

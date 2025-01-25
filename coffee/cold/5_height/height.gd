@@ -1,4 +1,4 @@
-extends Node2D
+extends CoffeeStep
 
 @export_range(5, 90, 1) var tipping_angle: float = 15
 @export_range(0, 1, 0.05) var down_duration: float = 1
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	tipped = clamp(tipped, 0, 1)
 	
 	pivot.rotation = base_rotation + tipped * (base_rotation - deg_to_rad(tipping_angle) - base_rotation)
-	
+
 
 func _on_tip_over_button_down() -> void:
 	tipping = true

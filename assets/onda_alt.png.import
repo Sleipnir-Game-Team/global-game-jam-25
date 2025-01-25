@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cou8klkpl203a"
+=======
+uid="uid://cimtjx1xj5yvq"
+>>>>>>> Stashed changes
 path="res://.godot/imported/onda_alt.png-c39457ffe7648dc9e2dae93f813a5623.ctex"
 metadata={
 "vram_texture": false
