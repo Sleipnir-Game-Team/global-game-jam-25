@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 JsonHandler="*res://globals/json_handler.gd"
 Config_Handler="*res://globals/config_handler.gd"
 UI_Controller="*res://ui/controller/ui_controller.gd"
+Logger="*res://addons/log_and_error/logger.gd"
 
 [debug]
 
@@ -31,6 +32,10 @@ gdscript/warnings/unsafe_method_access=1
 [dotnet]
 
 project/assembly_name="Global Game Jam 25"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/log_and_error/plugin.cfg")
 
 [layer_names]
 
