@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://lg6kuv3fkktu"]
+
+[ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/sfx_globals.gd" id="1_p5jl5"]
+[ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/soundqueue.gd" id="3_oi80x"]
+[ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/soundqueue_2d.gd" id="4_0wfhn"]
+[ext_resource type="AudioStream" uid="uid://c184buj775lul" path="res://TestingEnviroment/Assets/Music/TestTriggers/Anvil Drop.mp3" id="4_4q0cj"]
+[ext_resource type="AudioStream" uid="uid://cost46escwcso" path="res://TestingEnviroment/Assets/Test Ui Sounds/Swaggas Stanzaut.mp3" id="4_x5v4x"]
+
+[node name="SfxGlobals" type="Node"]
+script = ExtResource("1_p5jl5")
+
+[node name="placeholder" type="Node" parent="."]
+
+[node name="ui" type="Node" parent="."]
+
+[node name="button" type="Node" parent="ui"]
+
+[node name="awa" type="Node" parent="ui/button" groups=["combined_ui"]]
+script = ExtResource("3_oi80x")
+Count = 7
+
+[node name="Hit" type="AudioStreamPlayer" parent="ui/button/awa"]
+stream = ExtResource("4_x5v4x")
+
+[node name="wo" type="Node" parent="ui" groups=["combined_ui"]]
+script = ExtResource("3_oi80x")
+Count = 7
+
+[node name="Hit" type="AudioStreamPlayer" parent="ui/wo"]
+stream = ExtResource("4_x5v4x")
+
+[node name="SoundQueue" type="Node" parent="."]
+script = ExtResource("3_oi80x")
+Count = 16
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundQueue"]
+stream = ExtResource("4_4q0cj")
+
+[node name="SoundQueue2D" type="Node2D" parent="."]
+script = ExtResource("4_0wfhn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SoundQueue2D"]
