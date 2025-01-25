@@ -1,9 +1,5 @@
+class_name TasteGenerator
 extends Node
-
-var want_it_cold := false
-var want_a_lot_of_sugar := false
-var want_a_lot_of_milk := false
-var want_a_lot_of_foam := false
 
 enum taste_value {
 	FOAM = 8,
@@ -12,32 +8,27 @@ enum taste_value {
 	COLD = 1
 }
 
-var rng := RandomNumberGenerator.new()
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
-func generate_taste() -> Dictionary:
-	var selector_number := rng.randi_range(0, 15)
-
+func generate_taste() -> Taste:
+	var new_taste: Taste = Taste.new()
+	
+	var selector_number: int = rng.randi_range(0, 15)
+	
 	if selector_number >= taste_value.FOAM:
-		want_a_lot_of_foam = true
 		selector_number -= taste_value.FOAM
+		new_taste.wants_foam = true
 	
 	if selector_number >= taste_value.MILK:
-		want_a_lot_of_milk = true
 		selector_number -= taste_value.MILK
-		
-	if selector_number >= taste_value.SUGAR:
-		want_a_lot_of_sugar = true
-		selector_number -= taste_value.SUGAR
-		
-	if selector_number >= taste_value.COLD:
-		want_it_cold = true
-		selector_number -= taste_value.COLD
-
-	var taste_list := {
-		taste_value.COLD : want_it_cold,
-		taste_value.SUGAR : want_a_lot_of_sugar,
-		taste_value.MILK: want_a_lot_of_milk,
-		taste_value.FOAM: want_a_lot_of_foam
-	}
+		new_taste.wants_milk = true
 	
-	return taste_list
+	if selector_number >= taste_value.SUGAR:
+		selector_number -= taste_value.SUGAR
+		new_taste.wants_sugar = true
+	
+	if selector_number >= taste_value.COLD:
+		selector_number -= taste_value.COLD
+		new_taste.temperature = CoffeeMaking.CoffeeTemperature.COLD
+	
+	return new_taste

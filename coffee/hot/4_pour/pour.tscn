@@ -22,6 +22,7 @@ shader_parameter/is_canvas_group = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6y2"]
 resource_local_to_scene = true
 shader = ExtResource("3_4xitw")
+shader_parameter/Frequency = null
 shader_parameter/Imagem = ExtResource("5_nl0sp")
 
 [sub_resource type="Gradient" id="Gradient_8tdoj"]
@@ -58,7 +59,6 @@ curve = SubResource("Curve2D_171tu")
 
 [node name="SpoutSlider" type="PathFollow2D" parent="SpoutPath"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(472, 120)
 rotates = false
 loop = false

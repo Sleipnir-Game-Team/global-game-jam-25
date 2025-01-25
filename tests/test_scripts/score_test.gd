@@ -8,7 +8,7 @@ var scores: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	retrived_taste = taste_handler.retrive_taste('teste_client_1')
+	retrived_taste = taste_handler.retrieve_taste('teste_client_1')
 	print('retrived_taste: ', retrived_taste)
 	score_handler.score_calculation('Cold', 5, retrived_taste['1'])
 	score_handler.score_calculation('Sugar', 3, retrived_taste['2'])
@@ -17,8 +17,3 @@ func _ready() -> void:
 	scores = score_handler.score_classification()
 	print('melhores notas: ', scores['best_score'])
 	print('piores notas: ', scores['worst_score'])
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

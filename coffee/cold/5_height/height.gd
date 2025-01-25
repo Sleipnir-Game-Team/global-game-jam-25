@@ -33,4 +33,4 @@ func _on_tip_over_button_up() -> void:
 
 
 func _on_next_pressed() -> void:
-	end.emit()
+	end.emit(null) # TODO WILL HAVE TO ACTUALLY PASS THE HEIGHT

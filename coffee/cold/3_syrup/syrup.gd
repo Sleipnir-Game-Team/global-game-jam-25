@@ -16,4 +16,3 @@ func _on_pump_button_pressed() -> void:
 
 func _on_next_pressed() -> void:
 	end.emit(null)
-	print("lol, lmao even")

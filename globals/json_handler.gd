@@ -1,6 +1,6 @@
 extends Node
 
-func acesse_json_file(file_path: String) -> Variant:
+func access_json_file(file_path: String) -> Variant:
 	var file: FileAccess = FileAccess.open(file_path, FileAccess.READ)
 	var content: Variant = JSON.parse_string(file.get_as_text())
 	return content
