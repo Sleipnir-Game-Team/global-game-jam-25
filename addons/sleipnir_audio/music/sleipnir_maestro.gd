@@ -57,7 +57,7 @@ var _next_beat : int:               # próxima beat
 var _trigger_stems : Array              # stems trigger
 var _currently_playing_trigger : Array              # triggers tocando
 var _is_changing_songs : bool = false       # se está mudando de música
-var _silence_path : String = "silence-500ms.mp3"    # path do placeholder de silencio
+var _silence_path : String = "res://assets/addons assets/sleipnir_audio/silence-500ms.mp3"    # path do placeholder de silencio
 #endregion
 
 # funções públicas VVVVVVVVV

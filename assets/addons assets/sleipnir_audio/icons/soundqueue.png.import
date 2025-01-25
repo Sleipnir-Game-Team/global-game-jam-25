@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca1cmc8l1l8sx"
-path="res://.godot/imported/song_data.png-0f23e14e8c812feb12a8cb474fcec076.ctex"
+uid="uid://bjbagcotnmvm8"
+path="res://.godot/imported/soundqueue.png-26b21ae6f8d8fa514e4b75efb0630160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/sleipnir_audio/icons/song_data.png"
-dest_files=["res://.godot/imported/song_data.png-0f23e14e8c812feb12a8cb474fcec076.ctex"]
+source_file="res://assets/addons assets/sleipnir_audio/icons/soundqueue.png"
+dest_files=["res://.godot/imported/soundqueue.png-26b21ae6f8d8fa514e4b75efb0630160.ctex"]
 
 [params]
 

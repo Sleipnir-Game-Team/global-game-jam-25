@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2dicmp2fh0wh"
-path="res://.godot/imported/AudioPlayerInteractive.svg-25cee8598a43dac239d385ccccd40d5f.ctex"
+path="res://.godot/imported/AudioPlayerInteractive.svg-fa233a080c1cc07b8557fecf44c1762b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/sleipnir_audio/icons/AudioPlayerInteractive.svg"
-dest_files=["res://.godot/imported/AudioPlayerInteractive.svg-25cee8598a43dac239d385ccccd40d5f.ctex"]
+source_file="res://assets/addons assets/sleipnir_audio/icons/AudioPlayerInteractive.svg"
+dest_files=["res://.godot/imported/AudioPlayerInteractive.svg-fa233a080c1cc07b8557fecf44c1762b.ctex"]
 
 [params]
 
