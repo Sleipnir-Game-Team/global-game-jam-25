@@ -7,17 +7,11 @@ const SFXGLOBALS_SINGLETON   = "SfxGlobals"
 
 func _enter_tree() -> void:
 	add_custom_type("SoundQueue", "Node",
-<<<<<<< Updated upstream
-	preload("res://addons/sleipnir_audio/sfx/soundqueue.gd"),preload("/icons/soundqueue.png"))
-	
-	add_custom_type("SoundQueue2D", "Node2D",
-	preload("/sfx/soundqueue_2d.gd"),preload("/icons/soundqueue2d.png"))
-=======
 	preload("sfx/soundqueue.gd"),preload("res://assets/addons assets/sleipnir_audio/icons/soundqueue.png"))
 	
 	add_custom_type("SoundQueue2D", "Node2D",
 	preload("sfx/soundqueue_2d.gd"),preload("res://assets/addons assets/sleipnir_audio/icons/soundqueue2d.png"))
->>>>>>> Stashed changes
+
 	
 	add_autoload_singleton(SFXGLOBALS_SINGLETON,"sfx/sfx_globals.tscn")
 	add_autoload_singleton(AUDIOMANAGER_SINGLETON,"manager/audio_manager.gd")
