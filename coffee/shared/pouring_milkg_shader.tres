@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://c24q003sbnsyh"]
 
-[ext_resource type="Texture2D" uid="uid://b57528nykuq2u" path="res://assets/onda.png" id="1_s0tlr"]
+[ext_resource type="Texture2D" uid="uid://ca8pybqs4qcn0" path="res://assets/onda.png" id="1_s0tlr"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_fxsy0"]
 input_name = "time"

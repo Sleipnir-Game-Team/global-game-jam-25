@@ -22,8 +22,9 @@ Config_Handler="*res://globals/config_handler.gd"
 UI_Controller="*res://ui/controller/ui_controller.gd"
 Logger="*res://addons/log_and_error/logger.gd"
 Game_Manager="*res://globals/game_manager.gd"
+SfxGlobals="*res://addons/sleipnir_audio/sfx/sfx_globals.tscn"
 AudioManager="*res://addons/sleipnir_audio/manager/audio_manager.gd"
-SfxGlobals="*res://addons/sleipnir_audio/sfx/sfx_globals.gd"
+SleipnirMaestro="*res://addons/sleipnir_audio/music/sleipnir_maestro.tscn"
 
 [debug]
 
@@ -38,7 +39,7 @@ project/assembly_name="Global Game Jam 25"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/log_and_error/plugin.cfg")
+enabled=PackedStringArray("res://addons/log_and_error/plugin.cfg", "res://addons/sleipnir_audio/plugin.cfg")
 
 [layer_names]
 

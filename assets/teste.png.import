@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy60puhgmj0tj"
-path="res://.godot/imported/onda_alt.png-c39457ffe7648dc9e2dae93f813a5623.ctex"
+uid="uid://d1ivbmx10lh71"
+path="res://.godot/imported/teste.png-3ab7f08a3e311acd132be65eade827e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/onda_alt.png"
-dest_files=["res://.godot/imported/onda_alt.png-c39457ffe7648dc9e2dae93f813a5623.ctex"]
+source_file="res://assets/teste.png"
+dest_files=["res://.godot/imported/teste.png-3ab7f08a3e311acd132be65eade827e7.ctex"]
 
 [params]
 
