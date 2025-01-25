@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://8dxrcjtvp3ty"]
+
+[ext_resource type="Texture2D" uid="uid://fkxlunc036m0" path="res://assets/acucar.png" id="1_pqeh4"]
+[ext_resource type="Texture2D" uid="uid://d3j5jebnfk4hl" path="res://assets/ice_cube.png" id="2_56x52"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -473.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="play_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_pqeh4")
+texture_hover = ExtResource("2_56x52")
+
+[node name="options_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_pqeh4")
+texture_hover = ExtResource("2_56x52")
+
+[node name="credits_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_pqeh4")
+texture_hover = ExtResource("2_56x52")
+
+[node name="quit_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_pqeh4")
+texture_hover = ExtResource("2_56x52")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

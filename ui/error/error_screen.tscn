@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8m274eed2muf"]
+
+[ext_resource type="Script" path="res://ui/error/error_screen.gd" id="1_qym1k"]
+
+[node name="ErrorScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qym1k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 300
+
+[node name="margin_color" type="ColorRect" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.685885, 0, 0.000766049, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="box_color" type="ColorRect" parent="CanvasLayer/MarginContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="error_type_label" type="Label" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "\"NOME DO ERRO\""
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="text_color" type="ColorRect" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.276686, 0, 0.0679791, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="error_description" type="RichTextLabel" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 40
+text = "\"DESCRIÇÃO DO ERRO\""
+
+[node name="ok_button" type="Button" parent="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+button_mask = 5
+text = "OK"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/MarginContainer/MarginContainer/VBoxContainer/ok_button" to="." method="_on_ok_button_pressed"]

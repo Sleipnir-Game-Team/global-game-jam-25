@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 JsonHandler="*res://globals/json_handler.gd"
+Config_Handler="*res://globals/config_handler.gd"
+UI_Controller="*res://ui/controller/ui_controller.gd"
 
 [debug]
 
