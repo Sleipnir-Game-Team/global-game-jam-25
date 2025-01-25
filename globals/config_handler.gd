@@ -15,11 +15,6 @@ func _ready() -> void:
 ######################################### Init Handler #########################################
 func verify_configfile() -> void:
 	if !FileAccess.file_exists(SETTINGS_FILE_PATH):
-		config.set_value("keybinding", "player_left", "A")
-		config.set_value("keybinding", "player_right", "D")
-		config.set_value("keybinding", "player_hit", "Left Mouse Button")
-		config.set_value("keybinding", "player_special", "Right Mouse Button")
-		
 		config.set_value("video", "window_mode", 4)
 		config.set_value("video", "width", pc_width)
 		config.set_value("video", "height", pc_height)
@@ -27,11 +22,12 @@ func verify_configfile() -> void:
 		config.set_value("audio", "master_volume", 1.0)
 		config.set_value("audio", "music_volume", 1.0)
 		config.set_value("audio", "sfx_volume", 1.0)
+		config.set_value("audio", "ambience_volume", 1.0)
 		
 		config.save(SETTINGS_FILE_PATH)
 	else:
 		config.load(SETTINGS_FILE_PATH)
-		verify_all_settings()
+		#verify_all_settings()
 		run_all_settings()
 
 func run_all_settings() -> void:
@@ -42,22 +38,23 @@ func run_all_settings() -> void:
 	change_master_volume(min(audio_settings.master_volume, 1.0) * 100)
 	change_music_volume(min(audio_settings.music_volume, 1.0) * 100)
 	change_sfx_volume(min(audio_settings.sfx_volume, 1.0) * 100)
+	change_ambience_volume(min(audio_settings.ambience_volume, 1.0) * 100)
 
-func verify_all_settings() -> void:
-	if config.has_section_key("video", "resolution"):
-		save_video_settings("resolution", null)
-	if get_setting("video", "width") == null:
-		save_video_settings("width", pc_width)
-	if get_setting("video", "height") == null:
-		save_video_settings("height", pc_height)
-	if type_string(typeof(get_setting("video", "window_mode"))) == "String":
-		save_video_settings("window_mode", 3)
-	if config.has_section_key("video", "supported_resolutions"):
-		save_video_settings("supported_resolutions", null)
-	if config.has_section_key("keybinding", "player_up"):
-		save_keybinding_settings("player_up", null)
-	if config.has_section_key("keybinding", "player_down"):
-		save_keybinding_settings("player_down", null)
+#func verify_all_settings() -> void:
+	#if config.has_section_key("video", "resolution"):
+		#save_video_settings("resolution", null)
+	#if get_setting("video", "width") == null:
+		#save_video_settings("width", pc_width)
+	#if get_setting("video", "height") == null:
+		#save_video_settings("height", pc_height)
+	#if type_string(typeof(get_setting("video", "window_mode"))) == "String":
+		#save_video_settings("window_mode", 3)
+	#if config.has_section_key("video", "supported_resolutions"):
+		#save_video_settings("supported_resolutions", null)
+	#if config.has_section_key("keybinding", "player_up"):
+		#save_keybinding_settings("player_up", null)
+	#if config.has_section_key("keybinding", "player_down"):
+		#save_keybinding_settings("player_down", null)
 
 
 ######################################### Window Handler #########################################
@@ -130,6 +127,10 @@ func change_sfx_volume(value: float) -> void:
 	AudioManager.change_bus_volume(&"sfx", value)
 
 
+func change_ambience_volume(value: float) -> void:
+	AudioManager.change_bus_volume(&"ambience", value)
+
+
 func mute_master_volume(toggled_on: bool) -> void:
 	if toggled_on:
 		AudioServer.set_bus_mute(0,true)
@@ -157,9 +158,11 @@ func reset_volume_settings() -> void:
 	change_master_volume(1.0)
 	change_music_volume(1.0)
 	change_sfx_volume(1.0)
+	change_ambience_volume(1.0)
 	save_audio_settings("master_volume", 1.0)
 	save_audio_settings("music_volume", 1.0)
 	save_audio_settings("sfx_volume", 1.0)
+	save_audio_settings("ambience_volume", 1.0)
 
 
 ######################################### Saving Handler #########################################
@@ -170,11 +173,6 @@ func save_video_settings(key: String, value: Variant) -> void:
 
 func save_audio_settings(key: String, value: Variant) -> void:
 	config.set_value("audio", key, value)
-	config.save(SETTINGS_FILE_PATH)
-
-
-func save_keybinding_settings(key: String, value: Variant) -> void:
-	config.set_value("keybinding", key, value)
 	config.save(SETTINGS_FILE_PATH)
 
 
@@ -191,13 +189,6 @@ func load_all_audio_settings() -> Dictionary:
 	for key in config.get_section_keys("audio"):
 		audio_settings[key] = config.get_value("audio", key)
 	return audio_settings
-
-
-func load_all_keybinding_settings() -> Dictionary:
-	var keybinding_settings: Dictionary = {}
-	for key in config.get_section_keys("keybinding"):
-		keybinding_settings[key] = config.get_value("keybinding", key)
-	return keybinding_settings
 
 
 func get_setting(category: String, key: String) -> Variant:
