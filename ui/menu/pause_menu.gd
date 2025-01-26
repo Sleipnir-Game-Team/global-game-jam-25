@@ -10,7 +10,7 @@ func _on_resume_button_pressed() -> void:
 func _on_restart_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
 	localPause()
-	UI_Controller.changeScreen("res://main.tscn", get_tree().root)
+	UI_Controller.changeScreen("res://ui/menu/save_menu.tscn", get_tree().root)
 
 ## OnClick do botão "Menu Principal"
 func _on_main_menu_button_pressed() -> void:

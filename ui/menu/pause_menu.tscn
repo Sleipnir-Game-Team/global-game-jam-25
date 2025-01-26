@@ -75,7 +75,7 @@ text = "Continuar"
 
 [node name="restart_button" type="Button" parent="GridContainer/content_container/button_container"]
 layout_mode = 2
-text = "Reiniciar"
+text = "Saves"
 
 [node name="main_menu_button" type="Button" parent="GridContainer/content_container/button_container"]
 layout_mode = 2

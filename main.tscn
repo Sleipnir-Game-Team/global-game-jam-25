@@ -14,6 +14,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HotCoffee" type="Button" parent="Pausable"]
+layout_mode = 0
 offset_left = 196.0
 offset_top = 283.0
 offset_right = 430.0
@@ -22,6 +23,7 @@ text = "CAFÉ QUENTE
 KKKKKKKKKKKKKKKKKKKKKK"
 
 [node name="ColdCoffee" type="Button" parent="Pausable"]
+layout_mode = 0
 offset_left = 676.0
 offset_top = 281.0
 offset_right = 910.0
@@ -30,6 +32,7 @@ text = "CAFÉ GELADO
 LOL LMAO ROFL OMEGALUL"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pausable"]
+layout_mode = 0
 offset_left = 479.0
 offset_top = 375.0
 offset_right = 645.0
@@ -86,6 +89,7 @@ text = "Quero outro"
 
 [node name="Scores" type="Label" parent="Pausable"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 528.0
 offset_top = 56.0
 offset_right = 568.0

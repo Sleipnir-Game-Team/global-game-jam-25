@@ -1,0 +1,158 @@
+[gd_scene load_steps=6 format=3 uid="uid://uqyhjkki504r"]
+
+[ext_resource type="Script" path="res://ui/menu/save_menu.gd" id="1_x82mu"]
+[ext_resource type="Texture2D" uid="uid://dlvgahjvmykfk" path="res://assets/Assets finalizados/Acucar A.png" id="2_0y82u"]
+[ext_resource type="Texture2D" uid="uid://cmctk3h8d4vk1" path="res://assets/Assets finalizados/Cafe frio.png" id="3_hi51i"]
+[ext_resource type="Texture2D" uid="uid://dmrjq0q6638ve" path="res://assets/Assets finalizados/Acucar B.png" id="4_wtkuw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wclbw"]
+font_size = 50
+
+[node name="SaveMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x82mu")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Salvos"
+label_settings = SubResource("LabelSettings_wclbw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="margin/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="saves_list" type="GridContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer"]
+layout_mode = 2
+
+[node name="save_button" type="TextureButton" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_0y82u")
+texture_pressed = ExtResource("3_hi51i")
+texture_hover = ExtResource("4_wtkuw")
+
+[node name="game_timer" type="Label" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "tempo de jogo"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer2"]
+layout_mode = 2
+
+[node name="save_button" type="TextureButton" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_0y82u")
+texture_pressed = ExtResource("3_hi51i")
+texture_hover = ExtResource("4_wtkuw")
+
+[node name="game_timer" type="Label" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "tempo de jogo"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer3"]
+layout_mode = 2
+
+[node name="save_button" type="TextureButton" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_0y82u")
+texture_pressed = ExtResource("3_hi51i")
+texture_hover = ExtResource("4_wtkuw")
+
+[node name="game_timer" type="Label" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+text = "tempo de jogo"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer4"]
+layout_mode = 2
+
+[node name="save_button" type="TextureButton" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_0y82u")
+texture_pressed = ExtResource("3_hi51i")
+texture_hover = ExtResource("4_wtkuw")
+
+[node name="game_timer" type="Label" parent="margin/VBoxContainer/ScrollContainer/PanelContainer/MarginContainer/saves_list/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+text = "tempo de jogo"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="back_button" type="Button" parent="margin/VBoxContainer"]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="margin/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
