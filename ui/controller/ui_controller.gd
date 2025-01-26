@@ -2,6 +2,8 @@ extends Node
 
 var stack: ScreenStack = ScreenStack.new()
 var pause_menu_on: bool = false
+signal manage_dialogue_box
+signal dialogue_request
 
 class ScreenStack:
 	var screens: Array[Node]  = []
@@ -65,3 +67,6 @@ func managePauseMenu() -> void:
 		pause_menu_on = false
 		Game_Manager.resume()
 		
+func start_dialogue() -> void:
+	#chamar o ink
+	openScreen("res://ui/dialogue/dialogue_box.tscn", get_tree().root)

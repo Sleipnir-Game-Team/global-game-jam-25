@@ -1,44 +1,57 @@
 extends Control
 
-@onready var speaker_sprite_texturerect: TextureRect = get_node("%speaker")
+@onready var speaker_sprite_texturerect: TextureRect = get_node("%speaker_image")
 @onready var speaker_name_label: Label = get_node("%speaker_name")
 @onready var speech_richlabel: RichTextLabel= get_node("%speech")
-var speaker_sprite: String
-var speaker_name: String
 var speech: String
-var text_to_format: String
 var actions: Array = []
+@onready var timer: Timer = %Timer
 
 func _ready() -> void:
-	speaker_sprite
-	format_dialogue_box()
+	UI_Controller.manage_dialogue_box.connect(manage_dialogue)
+	#InkHandler.data_line.connect(manage_dialogue)
+	on_dialogue_request()
+	#timer.wait_time = tempo
+	timer.start()
 	
 
-func format_dialogue_box() -> void:
-	for linha in text_to_format.split("\n"):
-		var linhaDividida: Array = linha.split(";")
-		var actionDict: Dictionary = {}
-		for item: String in linhaDividida:
-			var itemDividido: Array = item.split("|")
-			actionDict[itemDividido[0]] = itemDividido[1]
-		actions.append(actionDict)
+func manage_dialogue(attributes: Dictionary) -> void:
+	print(attributes)
+	match attributes.type:
+		"name":
+			updateSpeakerName(attributes.content)
+			on_dialogue_request()
+		"img":
+			updateSpeakerImg(attributes.content)
+			on_dialogue_request()
+		"txt":
+			if timer.timeout.is_connected(write_speech):
+				timer.timeout.disconnect(write_speech)
+			timer.timeout.connect(write_speech.bind(attributes.content))
+			on_dialogue_request()
+		"voice":
+			pass
+		"wait":
+			pass
+		"end":
+			UI_Controller.freeScreen()
 
-func manage_attributes(attributes: Dictionary) -> void:
-	speaker_name = attributes["nome"]
-	speaker_sprite = attributes["imagem"]
-	text_to_format = attributes["texto"]
+func on_dialogue_request() -> void:
+	UI_Controller.dialogue_request.emit()
 
-func on_cutsceneNext() -> void:
-	UI_Controller.processAction(actions.pop_front())
-
-func updateCutsceneImg(image: String) -> void:
-	$TextureRect.texture = load(image)
-
-func updateCutsceneTxt(text: String) -> void:
-	$Label.set_text(text)
-
+func updateSpeakerImg(image: String) -> void:
+	%speaker_image.texture = load(image)
+	
+func updateSpeakerName(name: String) -> void:
+	%speaker_name.text = name
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton or event is InputEventKey:
 		if event.is_pressed():
-			UI_Controller.cutsceneNext.emit()
+			on_dialogue_request()
+
+func write_speech(text: String) -> void:
+	speech = text.substr(0, len(speech) + 1)
+	%speech.text = speech
+	if %speech.text == text:
+		timer.timeout.disconnect(write_speech)

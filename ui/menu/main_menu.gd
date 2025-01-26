@@ -1,5 +1,6 @@
 extends Control
 
+
 func _ready() -> void:
 	if SleipnirMaestro.current_song_node != null and SleipnirMaestro.current_song_node.is_playing():
 		SleipnirMaestro.load_song("main_menu",true,0,false)
@@ -7,6 +8,7 @@ func _ready() -> void:
 		SleipnirMaestro.load_song("main_menu",false,0,false)
 		SleipnirMaestro.play()
 	UI_Controller.stack.screens.append(self)
+	
 
 ## Função que roda quando você aperta o botão de "jogar"
 func _on_play_button_pressed() -> void:

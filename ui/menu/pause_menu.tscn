@@ -73,7 +73,7 @@ alignment = 1
 layout_mode = 2
 text = "Continuar"
 
-[node name="restart_button" type="Button" parent="GridContainer/content_container/button_container"]
+[node name="saves_button" type="Button" parent="GridContainer/content_container/button_container"]
 layout_mode = 2
 text = "Saves"
 
@@ -100,7 +100,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [connection signal="pressed" from="GridContainer/content_container/button_container/resume_button" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="GridContainer/content_container/button_container/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GridContainer/content_container/button_container/saves_button" to="." method="_on_saves_button_pressed"]
 [connection signal="pressed" from="GridContainer/content_container/button_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="GridContainer/content_container/button_container/options_menu_button" to="." method="_on_options_menu_button_pressed"]
 [connection signal="pressed" from="GridContainer/content_container/button_container/quit_button" to="." method="_on_quit_button_pressed"]

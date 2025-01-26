@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://nmkio3jrvuvk"]
+[gd_scene load_steps=3 format=3 uid="uid://nmkio3jrvuvk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rgmh6"]
+[ext_resource type="Script" path="res://front_caller_dialogue_box.gd" id="2_glm6r"]
 
 [node name="Main" type="Node2D"]
 process_mode = 3
@@ -37,6 +38,7 @@ offset_left = 479.0
 offset_top = 375.0
 offset_right = 645.0
 offset_bottom = 545.0
+script = ExtResource("2_glm6r")
 
 [node name="Label5" type="Label" parent="Pausable/VBoxContainer"]
 layout_mode = 2

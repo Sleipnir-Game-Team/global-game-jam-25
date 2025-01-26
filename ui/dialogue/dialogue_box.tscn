@@ -29,7 +29,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="speaker" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="speaker_image" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -55,6 +55,11 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Timer" type="Timer" parent="VBoxContainer/MarginContainer/dialoguebox/speech"]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
 
 [node name="continue_button_label" type="HBoxContainer" parent="VBoxContainer/MarginContainer/dialoguebox"]
 layout_mode = 2
