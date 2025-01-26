@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmxod5eao2d6u"]
+
+[ext_resource type="Script" path="res://ink/scripts/test.cs" id="1_st0wa"]
+[ext_resource type="Resource" uid="uid://bhs166n11cjwp" path="res://ink/test.ink" id="2_4adfr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vl8x1"]
+
+[node name="Test" type="VBoxContainer"]
+script = ExtResource("1_st0wa")
+story = ExtResource("2_4adfr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_vl8x1")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
