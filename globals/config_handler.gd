@@ -1,11 +1,11 @@
 extends Node
 
-var config := ConfigFile.new()
-const SETTINGS_FILE_PATH := "user://settings.ini" #local:C:\Users\#USUARIO#\AppData\Roaming\Godot\app_userdata\#PROJECTNAME#
-var screen_resolution := DisplayServer.screen_get_size()
-var pc_resolution := [screen_resolution[0], screen_resolution[1]]
-var pc_width : int = pc_resolution[0]
-var pc_height : int = pc_resolution[1]
+var config: ConfigFile = ConfigFile.new()
+const SETTINGS_FILE_PATH: = "user://settings.ini" #local:C:\Users\#USUARIO#\AppData\Roaming\Godot\app_userdata\#PROJECTNAME#
+var screen_resolution: = DisplayServer.screen_get_size()
+var pc_resolution: = [screen_resolution[0], screen_resolution[1]]
+var pc_width: int = pc_resolution[0]
+var pc_height: int = pc_resolution[1]
 signal window_mode_changed
 signal window_resolution_changed
 
@@ -139,19 +139,6 @@ func mute_master_volume(toggled_on: bool) -> void:
 
 
 ######################################### Input Handler #########################################
-#func create_action_list():
-	#InputMap.load_from_project_settings()
-	#for item in keybinding_list:
-		#item.queue_free()
-		#
-	#var action_formatted_list = format_actions(InputMap.get_actions())
-	#for action in action_formatted_list:
-		##var button = input_button_scene.instantiate()
-		#pass
-#
-#
-#func format_actions(actions):
-	#pass
 
 #TODO finalizar essa função, conectar ela com os sliders e criar o botão de reset
 func reset_volume_settings() -> void:

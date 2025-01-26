@@ -53,6 +53,7 @@ func changeScreen(screen_path: String, parent: Node = get_tree().root, attribute
 		stack.add(newScreen, parent)
 
 func freeScreen() -> Node:
+	print(stack.screens)
 	return stack.pop()
 
 func managePauseMenu() -> void:

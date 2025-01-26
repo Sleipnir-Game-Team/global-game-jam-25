@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkstckjgfc6p1"]
+
+[ext_resource type="Texture2D" uid="uid://bx51oaet2ulgv" path="res://assets/trabalhando.png" id="1_1kh5t"]
+[ext_resource type="Script" path="res://ui/menu/credits_menu.gd" id="1_sf1uj"]
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sf1uj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1kh5t")
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Voltar"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

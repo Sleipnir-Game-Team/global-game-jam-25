@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://8dxrcjtvp3ty"]
+[gd_scene load_steps=2 format=3 uid="uid://8dxrcjtvp3ty"]
 
-[ext_resource type="Texture2D" uid="uid://fkxlunc036m0" path="res://assets/acucar.png" id="1_pqeh4"]
-[ext_resource type="Texture2D" uid="uid://d3j5jebnfk4hl" path="res://assets/ice_cube.png" id="2_56x52"]
+[ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_jqykm"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqykm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,24 +32,25 @@ grow_vertical = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="play_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+[node name="play_button" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_pqeh4")
-texture_hover = ExtResource("2_56x52")
+text = "Jogar"
 
-[node name="options_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+[node name="options_button" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_pqeh4")
-texture_hover = ExtResource("2_56x52")
+text = "Opções"
 
-[node name="credits_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+[node name="credits_button" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_pqeh4")
-texture_hover = ExtResource("2_56x52")
+text = "Créditos"
 
-[node name="quit_button" type="TextureButton" parent="CenterContainer/HBoxContainer"]
+[node name="quit_button" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_pqeh4")
-texture_hover = ExtResource("2_56x52")
+text = "Sair"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

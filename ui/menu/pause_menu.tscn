@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlrdl0ksw61l1"]
+
+[ext_resource type="Script" path="res://ui/menu/pause_menu.gd" id="1_i3hmq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yovow"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+outline_color = Color(1, 1, 1, 0.67451)
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 0.447059)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3hmq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="left_blank_space" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="content_container" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="label_container" type="VBoxContainer" parent="GridContainer/content_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="GridContainer/content_container/label_container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PAUSADO"
+label_settings = SubResource("LabelSettings_yovow")
+horizontal_alignment = 1
+
+[node name="button_container" type="VBoxContainer" parent="GridContainer/content_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="resume_button" type="Button" parent="GridContainer/content_container/button_container"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="restart_button" type="Button" parent="GridContainer/content_container/button_container"]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="main_menu_button" type="Button" parent="GridContainer/content_container/button_container"]
+layout_mode = 2
+text = "Voltar ao menu principal"
+
+[node name="options_menu_button" type="Button" parent="GridContainer/content_container/button_container"]
+layout_mode = 2
+text = "Opções"
+
+[node name="quit_button" type="Button" parent="GridContainer/content_container/button_container"]
+layout_mode = 2
+text = "Sair"
+
+[node name="mid_down_blank_space" type="Control" parent="GridContainer/content_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="right_blank_space" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="GridContainer/content_container/button_container/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="GridContainer/content_container/button_container/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GridContainer/content_container/button_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="GridContainer/content_container/button_container/options_menu_button" to="." method="_on_options_menu_button_pressed"]
+[connection signal="pressed" from="GridContainer/content_container/button_container/quit_button" to="." method="_on_quit_button_pressed"]

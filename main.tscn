@@ -3,9 +3,17 @@
 [ext_resource type="Script" path="res://main.gd" id="1_rgmh6"]
 
 [node name="Main" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_rgmh6")
 
-[node name="HotCoffee" type="Button" parent="."]
+[node name="Pausable" type="Control" parent="."]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HotCoffee" type="Button" parent="Pausable"]
 offset_left = 196.0
 offset_top = 283.0
 offset_right = 430.0
@@ -13,7 +21,7 @@ offset_bottom = 337.0
 text = "CAFÉ QUENTE
 KKKKKKKKKKKKKKKKKKKKKK"
 
-[node name="ColdCoffee" type="Button" parent="."]
+[node name="ColdCoffee" type="Button" parent="Pausable"]
 offset_left = 676.0
 offset_top = 281.0
 offset_right = 910.0
@@ -21,62 +29,62 @@ offset_bottom = 335.0
 text = "CAFÉ GELADO
 LOL LMAO ROFL OMEGALUL"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pausable"]
 offset_left = 479.0
 offset_top = 375.0
 offset_right = 645.0
 offset_bottom = 545.0
 
-[node name="Label5" type="Label" parent="VBoxContainer"]
+[node name="Label5" type="Label" parent="Pausable/VBoxContainer"]
 layout_mode = 2
 text = "Gosto Aleatorio"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Pausable/VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label" type="Label" parent="Pausable/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Café Gelado?"
 
-[node name="ColdToggle" type="CheckButton" parent="VBoxContainer/GridContainer"]
+[node name="ColdToggle" type="CheckButton" parent="Pausable/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[node name="Label2" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label2" type="Label" parent="Pausable/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Muito Açucar?"
 
-[node name="SugarToggle" type="CheckButton" parent="VBoxContainer/GridContainer"]
+[node name="SugarToggle" type="CheckButton" parent="Pausable/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label3" type="Label" parent="Pausable/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Muito Leite?"
 
-[node name="MilkToggle" type="CheckButton" parent="VBoxContainer/GridContainer"]
+[node name="MilkToggle" type="CheckButton" parent="Pausable/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[node name="Label4" type="Label" parent="VBoxContainer/GridContainer"]
+[node name="Label4" type="Label" parent="Pausable/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Muita Espuma?"
 
-[node name="FoamToggle" type="CheckButton" parent="VBoxContainer/GridContainer"]
+[node name="FoamToggle" type="CheckButton" parent="Pausable/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 
-[node name="Generate" type="Button" parent="VBoxContainer"]
+[node name="Generate" type="Button" parent="Pausable/VBoxContainer"]
 layout_mode = 2
 text = "Quero outro"
 
-[node name="Scores" type="Label" parent="."]
+[node name="Scores" type="Label" parent="Pausable"]
 unique_name_in_owner = true
 offset_left = 528.0
 offset_top = 56.0
@@ -84,6 +92,6 @@ offset_right = 568.0
 offset_bottom = 79.0
 horizontal_alignment = 1
 
-[connection signal="pressed" from="HotCoffee" to="." method="_on_hot_coffee_pressed"]
-[connection signal="pressed" from="ColdCoffee" to="." method="_on_cold_coffee_pressed"]
-[connection signal="pressed" from="VBoxContainer/Generate" to="." method="_on_generate_pressed"]
+[connection signal="pressed" from="Pausable/HotCoffee" to="." method="_on_hot_coffee_pressed"]
+[connection signal="pressed" from="Pausable/ColdCoffee" to="." method="_on_cold_coffee_pressed"]
+[connection signal="pressed" from="Pausable/VBoxContainer/Generate" to="." method="_on_generate_pressed"]

@@ -25,6 +25,10 @@ var score: ScoreHandler = ScoreHandler.new()
 func _ready() -> void:
 	_on_generate_pressed()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause"):
+		UI_Controller.managePauseMenu()
+
 func _instantiate_making() -> void:
 	coffee_making = preload("res://coffee/coffee_making.tscn").instantiate()
 	coffee_making.finished.connect(_on_coffee_finished)
