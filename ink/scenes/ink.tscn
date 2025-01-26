@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ei5mquht5xdy"]
+
+[ext_resource type="Script" path="res://ink/scripts/ink_handler.gd" id="1_70bi6"]
+
+[node name="Ink" type="Node"]
+script = ExtResource("1_70bi6")
