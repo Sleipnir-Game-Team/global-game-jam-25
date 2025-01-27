@@ -18,3 +18,8 @@ Um dialogo de teste
     Limpa o ouvido
     ->DONE
 -> END
+
+=== objecao ===
+OBJECTION
+Vc é gay!
+-> END

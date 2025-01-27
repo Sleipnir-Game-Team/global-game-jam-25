@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmxod5eao2d6u"]
+[gd_scene load_steps=2 format=3 uid="uid://dmxod5eao2d6u"]
 
 [ext_resource type="Script" path="res://ink/scenes/ink_test.gd" id="1_e5fpc"]
-[ext_resource type="Resource" uid="uid://c5oq2ws5hxsdc" path="res://ink/Teste.ink" id="2_cpqcp"]
 
 [node name="Test" type="VBoxContainer"]
 script = ExtResource("1_e5fpc")
-current_story = ExtResource("2_cpqcp")
