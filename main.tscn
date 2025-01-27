@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nmkio3jrvuvk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rgmh6"]
-[ext_resource type="Script" path="res://front_caller_dialogue_box.gd" id="2_glm6r"]
+[ext_resource type="Script" path="res://ui/tests/front_caller_dialogue_box.gd" id="2_glm6r"]
 
 [node name="Main" type="Node2D"]
 process_mode = 3

@@ -29,6 +29,8 @@ func manage_dialogue(attributes: Dictionary) -> void:
 				timer.timeout.disconnect(write_speech)
 			timer.timeout.connect(write_speech.bind(attributes.content))
 			on_dialogue_request()
+		"choice":
+			pass #content = dict chave->id escolhas content->escolhas
 		"voice":
 			pass
 		"wait":
