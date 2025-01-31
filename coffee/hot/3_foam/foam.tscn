@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c613b2vryg60s"]
+[gd_scene load_steps=17 format=3 uid="uid://c613b2vryg60s"]
 
 [ext_resource type="Script" path="res://coffee/shared/foam.gd" id="1_bw3gi"]
 [ext_resource type="PackedScene" uid="uid://xavkvuxabiny" path="res://components/draggable.tscn" id="2_1wpi1"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_m00sn"]
+[ext_resource type="AudioStream" uid="uid://dp0h3fxlrkx4j" path="res://assets/sounds/milk/milk.steam.vapor.mp3" id="4_1aha6"]
+[ext_resource type="AudioStream" uid="uid://r0l0cgjgui4f" path="res://assets/sounds/milk/milk.steam.shallow1.mp3" id="5_f8wea"]
+[ext_resource type="AudioStream" uid="uid://cjisd0wsu5vwh" path="res://assets/sounds/milk/milk.steam.shallow2.mp3" id="6_6u7lt"]
+[ext_resource type="AudioStream" uid="uid://bkp7gj2h0iyp6" path="res://assets/sounds/milk/milk.steam.deep1.mp3" id="7_pv2a3"]
+[ext_resource type="AudioStream" uid="uid://b6qmqx3a5y8kq" path="res://assets/sounds/milk/milk.steam.deep2.mp3" id="8_difpb"]
+[ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/audio_state_machine.gd" id="9_rnniv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5ykr"]
 size = Vector2(63.1506, 136.039)
@@ -14,6 +20,36 @@ size = Vector2(51.4793, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sht6w"]
 size = Vector2(35.5029, 7.63314)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_epap0"]
+streams_count = 2
+stream_0/stream = ExtResource("5_f8wea")
+stream_1/stream = ExtResource("6_6u7lt")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sclxs"]
+streams_count = 2
+stream_0/stream = ExtResource("7_pv2a3")
+stream_1/stream = ExtResource("8_difpb")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_mq1lx"]
+clip_count = 3
+clip_0/name = &"OUT"
+clip_0/stream = ExtResource("4_1aha6")
+clip_0/auto_advance = 0
+clip_1/name = &"SHALLOW"
+clip_1/stream = SubResource("AudioStreamRandomizer_epap0")
+clip_1/auto_advance = 0
+clip_2/name = &"DEEP"
+clip_2/stream = SubResource("AudioStreamRandomizer_sclxs")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 2,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
 
 [node name="Foam" type="Node2D"]
 script = ExtResource("1_bw3gi")
@@ -78,6 +114,12 @@ offset_top = 496.0
 offset_right = 1128.0
 offset_bottom = 624.0
 text = "NEXT"
+
+[node name="FoamAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamInteractive_mq1lx")
+bus = &"sfx"
+script = ExtResource("9_rnniv")
 
 [connection signal="area_entered" from="Frother" to="." method="_on_frother_area_entered"]
 [connection signal="area_exited" from="Frother" to="." method="_on_frother_area_exited"]

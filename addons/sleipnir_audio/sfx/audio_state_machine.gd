@@ -17,7 +17,7 @@ func switch_audio_state(state_name:String,offset:int=0) ->Error:
 
 	# se quiser mudar pra sessão atual, retorna
 	if current_state == state_name:
-		Logger.warn("can't switch to the same state")
+		#Logger.warn("can't switch to the same state")
 		return ERR_ALREADY_IN_USE
 	
 	# se estiver pausado ou parado, retorna
