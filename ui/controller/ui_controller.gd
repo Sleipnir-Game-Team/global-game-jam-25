@@ -64,6 +64,7 @@ func managePauseMenu() -> void:
 		Game_Manager.pause()
 		openScreen("res://ui/menu/pause_menu.tscn", get_tree().root)
 	elif freeScreen().name == "PauseMenu":
+		print("whyyyyyyyyy")
 		pause_menu_on = false
 		Game_Manager.resume()
 		

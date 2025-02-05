@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8dxrcjtvp3ty"]
+[gd_scene load_steps=3 format=3 uid="uid://8dxrcjtvp3ty"]
 
 [ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_jqykm"]
+[ext_resource type="Texture2D" uid="uid://bx51oaet2ulgv" path="res://assets/trabalhando.png" id="2_w327h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_w327h")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -36,6 +38,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Jogar"
 
+[node name="saves_button" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Salvos"
+
 [node name="options_button" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 text = "Opções"
@@ -51,6 +57,7 @@ text = "Sair"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="CenterContainer/HBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/saves_button" to="." method="_on_saves_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

@@ -180,3 +180,5 @@ func load_all_audio_settings() -> Dictionary:
 
 func get_setting(category: String, key: String) -> Variant:
 	return config.get_value(category, key)
+
+#TODO um sistema de reset de configs (talvez unico para cada coisa ou por seção ou um geral mesmo)

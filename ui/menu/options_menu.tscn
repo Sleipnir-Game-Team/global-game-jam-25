@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxvs3bowuttp4"]
+[gd_scene load_steps=8 format=3 uid="uid://cxvs3bowuttp4"]
 
 [ext_resource type="Script" path="res://ui/menu/options_menu.gd" id="1_qmcbe"]
 [ext_resource type="Script" path="res://ui/menu/resolution_dropbox.gd" id="2_2lyvc"]
+[ext_resource type="Texture2D" uid="uid://bx51oaet2ulgv" path="res://assets/trabalhando.png" id="2_brfr3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxam6"]
 font_size = 80
@@ -32,6 +33,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qmcbe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_brfr3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -316,7 +326,6 @@ size_flags_horizontal = 3
 [node name="resolution_dropbox" type="OptionButton" parent="VBoxContainer/MarginContainer/ScrollContainer/PanelContainer/VBoxContainer/video_options/video_resolution/resolution_selector"]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 1
 script = ExtResource("2_2lyvc")
 
 [node name="Control4" type="Control" parent="VBoxContainer/MarginContainer/ScrollContainer/PanelContainer/VBoxContainer/video_options/video_resolution/resolution_selector"]

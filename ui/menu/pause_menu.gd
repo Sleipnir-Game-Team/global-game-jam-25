@@ -9,7 +9,6 @@ func _on_resume_button_pressed() -> void:
 ## OnClick do botão "Reiniciar" - reinicia o jogo do ínicio do tutorial
 func _on_saves_button_pressed() -> void:
 	AudioManager.play_global("ui.button.lick")
-	localPause()
 	UI_Controller.openScreen("res://ui/menu/save_menu.tscn", get_tree().root)
 
 ## OnClick do botão "Menu Principal"

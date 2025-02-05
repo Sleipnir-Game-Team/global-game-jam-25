@@ -14,7 +14,12 @@ func _ready() -> void:
 func _on_play_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")
 	UI_Controller.changeScreen("res://main.tscn")
-
+	
+## Função que roda quando você aperta o botão de "salvos"
+func _on_saves_button_pressed() -> void:
+	AudioManager.play_global("ui.button.click")
+	UI_Controller.openScreen("res://ui/menu/save_menu.tscn")
+	
 ## Função que roda quando você aperta o botão de "opções"
 func _on_options_button_pressed() -> void:
 	AudioManager.play_global("ui.button.click")

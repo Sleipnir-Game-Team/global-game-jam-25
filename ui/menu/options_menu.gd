@@ -81,6 +81,5 @@ func _on_mute_check_box_toggled(toggled_on: bool) -> void:
 
 func _on_back_button_pressed() -> void:
 	AudioManager.play_global("ui.screen.back")
-	print("o jogo")
 	UI_Controller.freeScreen()
 	

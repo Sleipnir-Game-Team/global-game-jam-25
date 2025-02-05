@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://uqyhjkki504r"]
+[gd_scene load_steps=7 format=3 uid="uid://uqyhjkki504r"]
 
 [ext_resource type="Script" path="res://ui/menu/save_menu.gd" id="1_x82mu"]
 [ext_resource type="Texture2D" uid="uid://dlvgahjvmykfk" path="res://assets/Assets finalizados/Acucar A.png" id="2_0y82u"]
+[ext_resource type="Texture2D" uid="uid://bx51oaet2ulgv" path="res://assets/trabalhando.png" id="2_cbbl1"]
 [ext_resource type="Texture2D" uid="uid://cmctk3h8d4vk1" path="res://assets/Assets finalizados/Cafe frio.png" id="3_hi51i"]
 [ext_resource type="Texture2D" uid="uid://dmrjq0q6638ve" path="res://assets/Assets finalizados/Acucar B.png" id="4_wtkuw"]
 
@@ -9,6 +10,7 @@
 font_size = 50
 
 [node name="SaveMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +18,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x82mu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cbbl1")
 
 [node name="margin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -154,5 +165,7 @@ vertical_alignment = 1
 [node name="back_button" type="Button" parent="margin/VBoxContainer"]
 layout_mode = 2
 text = "Voltar"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="margin/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
