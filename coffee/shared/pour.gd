@@ -2,15 +2,16 @@ extends CoffeeStep
 
 @onready var pivot: Node2D = %Pivot
 @onready var spout_slider: PathFollow2D = %SpoutSlider
-@onready var osu_slider: PathFollow2D = %OsuSlider
 @onready var left_border: Marker2D = %LeftBorder
 @onready var right_border: Marker2D = %RightBorder
 @onready var next: Button = %Next
+@onready var texture_rect: TextureRect = %TextureRect
 
 ## Porcentagem de líquido que já foi derramado
 var liquid_poured: float = 0:
 	set(value):
 		liquid_poured = value
+		texture_rect.size.y = value * 100
 		minimum_progress = lerp(0.5, 1.0, liquid_poured) 
 
 @export_range(0, 1, 0.05) var min_liquid_poured: float = 0
@@ -36,11 +37,8 @@ func _process(delta: float) -> void:
 		var percentage: float = inverse_lerp(left_border.global_position.x, right_border.global_position.x, get_global_mouse_position().x)
 		percentage = clamp(percentage, 0, 1)
 		
-		osu_slider.progress_ratio = 1 - percentage
 		spout_slider.progress_ratio = 1 - percentage
-		
 		pivot.rotation = -PI/2 + percentage * (PI/2)
-		osu_slider.rotation = -PI/2 + percentage * (PI/2)
 	
 	if liquid_poured >= min_liquid_poured:
 		next.visible = true
@@ -59,10 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT):
 		return;
 		
-	if mouse_on_slider and event.is_pressed():
-		mouse_held_down = true;
-	else:
-		mouse_held_down = false;
+	mouse_held_down = mouse_on_slider and event.is_pressed();
 
 func _on_osu_slider_mouse_entered() -> void:
 	mouse_on_slider = true
