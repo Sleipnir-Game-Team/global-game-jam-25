@@ -1,23 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxodpak5ddnmj"]
+[gd_scene load_steps=8 format=3 uid="uid://dxodpak5ddnmj"]
 
 [ext_resource type="Script" path="res://coffee/hot/1_sugar/sugar.gd" id="1_c08lw"]
-[ext_resource type="Texture2D" uid="uid://b7b63u0mnd1wu" path="res://assets/xicara.png" id="1_ecwbm"]
-[ext_resource type="Texture2D" uid="uid://fkxlunc036m0" path="res://assets/acucar.png" id="2_vfufs"]
+[ext_resource type="Texture2D" uid="uid://jwtg2bygom6f" path="res://assets/Assets finalizados/Xicara.png" id="2_0gwra"]
+[ext_resource type="Texture2D" uid="uid://dmrjq0q6638ve" path="res://assets/Assets finalizados/Acucar B.png" id="3_2dqam"]
+[ext_resource type="Texture2D" uid="uid://dlvgahjvmykfk" path="res://assets/Assets finalizados/Acucar A.png" id="4_whm7a"]
+
+[sub_resource type="Animation" id="Animation_552tb"]
+resource_name = "sugar_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AddSugarButton:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_2dqam"), ExtResource("4_whm7a")]
+}
+
+[sub_resource type="Animation" id="Animation_5sq65"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AddSugarButton:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_2dqam")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7law2"]
+_data = {
+"RESET": SubResource("Animation_5sq65"),
+"sugar_animation": SubResource("Animation_552tb")
+}
 
 [node name="Sugar" type="Node2D"]
 script = ExtResource("1_c08lw")
 
 [node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(232, 472)
-scale = Vector2(0.479321, 0.578804)
-texture = ExtResource("1_ecwbm")
+position = Vector2(174.23, 413.045)
+scale = Vector2(0.872314, 1.11968)
+texture = ExtResource("2_0gwra")
 
 [node name="AddSugarButton" type="Button" parent="."]
+unique_name_in_owner = true
 offset_left = 456.0
 offset_top = 80.0
 offset_right = 774.0
 offset_bottom = 561.0
-icon = ExtResource("2_vfufs")
+icon = ExtResource("3_2dqam")
 
 [node name="SugarCounterLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -33,6 +72,12 @@ offset_top = 448.0
 offset_right = 1089.0
 offset_bottom = 575.0
 text = "NEXT"
+
+[node name="sugar_animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_7law2")
+}
 
 [connection signal="pressed" from="AddSugarButton" to="." method="_on_add_sugar_button_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

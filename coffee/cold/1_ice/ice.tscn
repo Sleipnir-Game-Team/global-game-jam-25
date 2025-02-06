@@ -1,11 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://fackfa37wlof"]
+[gd_scene load_steps=8 format=3 uid="uid://fackfa37wlof"]
 
 [ext_resource type="Script" path="res://coffee/cold/1_ice/ice.gd" id="1_vl8ju"]
 [ext_resource type="Texture2D" uid="uid://y2h6btntqetm" path="res://assets/tall_glass.png" id="1_xga8w"]
 [ext_resource type="Texture2D" uid="uid://ba2f752xahy8s" path="res://assets/Assets finalizados/Gelo.png" id="3_n6m6w"]
+[ext_resource type="Texture2D" uid="uid://c45q4dt7hwusp" path="res://assets/Assets finalizados/Cubo de gelo.png" id="4_vatic"]
+
+[sub_resource type="Animation" id="Animation_l7r4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ice_cube_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(634, 377)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ice_cube_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5btko"]
+resource_name = "ice_cube_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ice_cube_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(634, 377), Vector2(579, 237), Vector2(456, 104), Vector2(327, 111), Vector2(226, 153)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ice_cube_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqomf"]
+_data = {
+"RESET": SubResource("Animation_l7r4o"),
+"ice_cube_animation": SubResource("Animation_5btko")
+}
 
 [node name="Ice" type="Node2D"]
 script = ExtResource("1_vl8ju")
+
+[node name="Ice_cube_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(634, 377)
+texture = ExtResource("4_vatic")
+
+[node name="ice_animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bqomf")
+}
 
 [node name="TallGlass" type="Sprite2D" parent="."]
 position = Vector2(224, 416)
@@ -34,5 +106,6 @@ offset_right = 1089.0
 offset_bottom = 575.0
 text = "NEXT"
 
+[connection signal="animation_finished" from="ice_animation" to="." method="_on_ice_animation_animation_finished"]
 [connection signal="pressed" from="AddIceButton" to="." method="_on_add_ice_button_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
