@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c613b2vryg60s"]
+[gd_scene load_steps=18 format=3 uid="uid://c613b2vryg60s"]
 
 [ext_resource type="Script" path="res://coffee/shared/foam.gd" id="1_bw3gi"]
 [ext_resource type="PackedScene" uid="uid://xavkvuxabiny" path="res://components/draggable.tscn" id="2_1wpi1"]
 [ext_resource type="Texture2D" uid="uid://dorpdnwfcktoq" path="res://assets/black_pitcher.png" id="2_m00sn"]
+[ext_resource type="Texture2D" uid="uid://d4n1i3claacy0" path="res://assets/Assets finalizados/Maquina de cafe A.png" id="2_pm0yh"]
 [ext_resource type="AudioStream" uid="uid://dp0h3fxlrkx4j" path="res://assets/sounds/milk/milk.steam.vapor.mp3" id="4_1aha6"]
 [ext_resource type="AudioStream" uid="uid://r0l0cgjgui4f" path="res://assets/sounds/milk/milk.steam.shallow1.mp3" id="5_f8wea"]
 [ext_resource type="AudioStream" uid="uid://cjisd0wsu5vwh" path="res://assets/sounds/milk/milk.steam.shallow2.mp3" id="6_6u7lt"]
@@ -55,8 +56,12 @@ Vector2i(-1, -1): {
 script = ExtResource("1_bw3gi")
 milk = 0.0
 
+[node name="MaquinaDeCafeA" type="Sprite2D" parent="."]
+position = Vector2(467, 319)
+texture = ExtResource("2_pm0yh")
+
 [node name="Frother" type="Area2D" parent="."]
-position = Vector2(544, 256)
+position = Vector2(491, 318)
 collision_layer = 0
 collision_mask = 4
 metadata/_edit_group_ = true
