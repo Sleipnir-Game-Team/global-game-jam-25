@@ -10,42 +10,36 @@ script = ExtResource("1_ogljj")
 
 [node name="Small" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 192.0
-offset_top = 320.0
-offset_right = 1805.0
-offset_bottom = 1795.0
-scale = Vector2(0.088, 0.082)
-icon = ExtResource("2_pcs4m")
-expand_icon = true
+offset_left = 248.0
+offset_top = 406.0
+offset_right = 542.0
+offset_bottom = 719.0
+icon = ExtResource("4_vvwxr")
 
 [node name="Medium" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 448.0
-offset_top = 280.0
-offset_right = 1239.0
-offset_bottom = 1026.0
-scale = Vector2(0.243, 0.226)
+offset_left = 787.0
+offset_top = 289.0
+offset_right = 1118.0
+offset_bottom = 731.0
 icon = ExtResource("3_rcvw4")
-expand_icon = true
 
 [node name="Large" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 704.0
-offset_top = 168.0
-offset_right = 1306.0
-offset_bottom = 738.0
-scale = Vector2(0.528, 0.491)
-icon = ExtResource("4_vvwxr")
+offset_left = 1344.0
+offset_top = 175.0
+offset_right = 1765.0
+offset_bottom = 739.0
+icon = ExtResource("2_pcs4m")
 icon_alignment = 1
-expand_icon = true
 
 [node name="Next" type="Button" parent="."]
 unique_name_in_owner = true
 visible = false
-offset_left = 936.0
-offset_top = 496.0
-offset_right = 1128.0
-offset_bottom = 624.0
+offset_left = 1630.0
+offset_top = 891.0
+offset_right = 1822.0
+offset_bottom = 1019.0
 text = "NEXT"
 
 [connection signal="pressed" from="Small" to="." method="_on_small_pressed"]

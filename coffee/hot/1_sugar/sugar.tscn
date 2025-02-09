@@ -96,31 +96,30 @@ _data = {
 script = ExtResource("1_c08lw")
 
 [node name="Xicara" type="Sprite2D" parent="."]
-position = Vector2(174.23, 413.045)
-scale = Vector2(0.872314, 1.11968)
+position = Vector2(488.23, 633.045)
 texture = ExtResource("2_0gwra")
 
 [node name="AddSugarButton" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 456.0
-offset_top = 80.0
-offset_right = 774.0
-offset_bottom = 561.0
+offset_left = 900.0
+offset_top = 296.0
+offset_right = 1234.0
+offset_bottom = 777.0
 icon = ExtResource("3_2dqam")
 
 [node name="SugarCounterLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 96.0
-offset_top = 176.0
-offset_right = 261.0
-offset_bottom = 199.0
+offset_left = 394.0
+offset_top = 286.0
+offset_right = 559.0
+offset_bottom = 309.0
 text = "Colheres de açucar: 0"
 
 [node name="Next" type="Button" parent="."]
-offset_left = 896.0
-offset_top = 448.0
-offset_right = 1089.0
-offset_bottom = 575.0
+offset_left = 1601.0
+offset_top = 879.0
+offset_right = 1794.0
+offset_bottom = 1006.0
 text = "NEXT"
 
 [node name="sugar_animation" type="AnimationPlayer" parent="."]
@@ -131,7 +130,7 @@ libraries = {
 
 [node name="ColherA" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(221, 171)
+position = Vector2(529, 429)
 rotation = -1.5708
 texture = ExtResource("4_hqkxp")
 

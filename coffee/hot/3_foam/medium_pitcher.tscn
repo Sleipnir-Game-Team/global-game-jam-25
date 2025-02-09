@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqoyc6a18hqjp"]
+
+[ext_resource type="Texture2D" uid="uid://bq63fganm2y0b" path="res://assets/Assets finalizados/Jarra de leite B.png" id="1_v4241"]
+[ext_resource type="PackedScene" uid="uid://xavkvuxabiny" path="res://components/draggable.tscn" id="2_w1t2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giats"]
+size = Vector2(105.621, 127.219)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sht6w"]
+size = Vector2(54.142, 7.63314)
+
+[node name="Pitcher" type="Area2D"]
+position = Vector2(1218, 590)
+scale = Vector2(3.38, 3.38)
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(30.4734, -18.9349)
+scale = Vector2(0.34483, 0.34483)
+texture = ExtResource("1_v4241")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27.9586, -17.7515)
+shape = SubResource("RectangleShape2D_giats")
+
+[node name="PitcherBottom" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(23.6686, 43.1953)
+
+[node name="PitcherTop" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(25.1479, -70.1183)
+
+[node name="Draggable" parent="." instance=ExtResource("2_w1t2b")]
+
+[node name="FoamLine" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-5.02959, 20.1183)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoamLine"]
+position = Vector2(31.5089, 21.5977)
+shape = SubResource("RectangleShape2D_sht6w")
+debug_color = Color(0.991694, 0, 0.262175, 0.42)

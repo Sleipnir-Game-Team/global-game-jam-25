@@ -1,10 +1,10 @@
 extends CoffeeStep
 
 @onready var tip: Area2D = %Tip
-@onready var foam_line: Area2D = %FoamLine
+@onready var foam_line: Area2D
 
-@onready var pitcher_top: Marker2D = %PitcherTop
-@onready var pitcher_bottom: Marker2D = %PitcherBottom
+@onready var pitcher_top: Marker2D
+@onready var pitcher_bottom: Marker2D
 @onready var next: Button = %Next
 @onready var foam_audio: AudioStateMachine = %FoamAudio
 
@@ -18,6 +18,16 @@ var full: bool = false
 var foam: float = 0
 
 func _ready() -> void:
+	var pitcher: Node
+	match get_parent().new_coffee.milk_pitcher:
+		1: pitcher = load("res://coffee/hot/3_foam/small_pitcher.tscn").instantiate();
+		2: pitcher = load("res://coffee/hot/3_foam/medium_pitcher.tscn").instantiate();
+		3: pitcher = load("res://coffee/hot/3_foam/large_pitcher.tscn").instantiate();
+	pitcher.name = "Pitcher"
+	add_child(pitcher)
+	foam_line = $Pitcher/FoamLine
+	pitcher_top = $Pitcher/PitcherTop
+	pitcher_bottom = $Pitcher/PitcherBottom
 	AudioManager.play_sfx(foam_audio)
 
 func _process(delta: float) -> void:
