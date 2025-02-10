@@ -20,9 +20,16 @@ var foam: float = 0
 func _ready() -> void:
 	var pitcher: Node
 	match get_parent().new_coffee.milk_pitcher:
-		1: pitcher = load("res://coffee/hot/3_foam/small_pitcher.tscn").instantiate();
-		2: pitcher = load("res://coffee/hot/3_foam/medium_pitcher.tscn").instantiate();
-		3: pitcher = load("res://coffee/hot/3_foam/large_pitcher.tscn").instantiate();
+		1: 
+			pitcher = load("res://coffee/hot/3_foam/small_pitcher.tscn").instantiate();
+			increment_per_second = 0.2
+		2: 
+			pitcher = load("res://coffee/hot/3_foam/medium_pitcher.tscn").instantiate();
+			increment_per_second = 0.15
+		3: 
+			pitcher = load("res://coffee/hot/3_foam/large_pitcher.tscn").instantiate();
+			increment_per_second = 0.1
+	
 	pitcher.name = "Pitcher"
 	add_child(pitcher)
 	foam_line = $Pitcher/FoamLine

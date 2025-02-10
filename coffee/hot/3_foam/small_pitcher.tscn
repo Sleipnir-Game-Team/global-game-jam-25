@@ -35,11 +35,10 @@ position = Vector2(25.4438, -64.2012)
 
 [node name="FoamLine" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-5.02959, 20.1183)
+position = Vector2(23.0769, 24.8521)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoamLine"]
-position = Vector2(28.9941, 1.47934)
 shape = SubResource("RectangleShape2D_sht6w")
 debug_color = Color(0.991694, 0, 0.262175, 0.42)
