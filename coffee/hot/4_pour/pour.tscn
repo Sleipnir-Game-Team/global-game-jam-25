@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvjigyi4c34d"]
+[gd_scene load_steps=15 format=3 uid="uid://dvjigyi4c34d"]
 
 [ext_resource type="Script" path="res://coffee/shared/pour.gd" id="1_1hgyr"]
 [ext_resource type="Texture2D" uid="uid://xx25b0ms4ah7" path="res://assets/Assets finalizados/Jarra de leite A.png" id="2_fit7v"]
@@ -6,6 +6,9 @@
 [ext_resource type="Shader" path="res://coffee/shared/teste.gdshader" id="3_v4pmo"]
 [ext_resource type="Texture2D" uid="uid://c63yix1xc48qr" path="res://assets/onda.png" id="5_nl0sp"]
 [ext_resource type="Texture2D" uid="uid://jwtg2bygom6f" path="res://assets/Assets finalizados/Xicara.png" id="6_beryl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efc5l"]
+size = Vector2(100, 300)
 
 [sub_resource type="Curve2D" id="Curve2D_171tu"]
 _data = {
@@ -32,14 +35,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cvvps"]
 gradient = SubResource("Gradient_8tdoj")
 
-[sub_resource type="Curve2D" id="Curve2D_k1eel"]
-_data = {
-"points": PackedVector2Array(-33.1871, 236.007, 33.1871, -236.007, 732, 422, 47.6736, 16.0667, -47.6736, -16.0667, 532, 113)
-}
-point_count = 2
+[sub_resource type="Gradient" id="Gradient_wxuiv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efc5l"]
-size = Vector2(100, 300)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pycnb"]
+gradient = SubResource("Gradient_wxuiv")
 
 [node name="Pour" type="Node2D"]
 script = ExtResource("1_1hgyr")
@@ -52,67 +52,16 @@ position = Vector2(504.325, 392)
 position = Vector2(169.675, -51)
 texture = ExtResource("2_fit7v")
 
-[node name="Pivot2" type="Node2D" parent="."]
+[node name="OsuSliderArea" type="Area2D" parent="Pivot"]
 unique_name_in_owner = true
-visible = false
-position = Vector2(504.325, 392)
-rotation = -0.261799
+position = Vector2(307.675, -97)
+collision_mask = 0
 
-[node name="Jarra" type="Sprite2D" parent="Pivot2"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
-
-[node name="Pivot3" type="Node2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(504.325, 392)
-rotation = -0.523598
-
-[node name="Jarra" type="Sprite2D" parent="Pivot3"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
-
-[node name="Pivot4" type="Node2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(504.325, 392)
-rotation = -0.785397
-
-[node name="Jarra" type="Sprite2D" parent="Pivot4"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
-
-[node name="Pivot5" type="Node2D" parent="."]
-visible = false
-position = Vector2(504.325, 392)
-rotation = -1.0472
-
-[node name="Jarra" type="Sprite2D" parent="Pivot5"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
-
-[node name="Pivot6" type="Node2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(504.325, 392)
-rotation = -1.309
-
-[node name="Jarra" type="Sprite2D" parent="Pivot6"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
-
-[node name="Pivot7" type="Node2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(504.325, 392)
-rotation = -1.57079
-
-[node name="Jarra" type="Sprite2D" parent="Pivot7"]
-position = Vector2(169.675, -51)
-texture = ExtResource("2_fit7v")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/OsuSliderArea"]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_efc5l")
 
 [node name="SpoutPath" type="Path2D" parent="."]
-visible = false
 curve = SubResource("Curve2D_171tu")
 
 [node name="SpoutSlider" type="PathFollow2D" parent="SpoutPath"]
@@ -137,24 +86,23 @@ region_rect = Rect2(0, -197.5, 287, 325)
 position = Vector2(264, 556)
 texture = ExtResource("6_beryl")
 
-[node name="HandlePath" type="Path2D" parent="."]
-position = Vector2(27, 25)
-curve = SubResource("Curve2D_k1eel")
+[node name="Polygon2D" type="Polygon2D" parent="Xicara"]
+clip_children = 1
+position = Vector2(-36.3778, -13.7312)
+scale = Vector2(1.03019, 0.385483)
+color = Color(0, 0, 0, 1)
+antialiased = true
+polygon = PackedVector2Array(-33.6076, -156.346, 3.27879, -145.969, 28.5169, -148.563, 63.4619, -164.128, 87.7293, -184.881, 88.7, -190.07, 46.9601, -208.229, 1.3374, -213.417, -48.1681, -210.823, -79.2303, -205.635, -85.0545, -197.852, -77.2889, -184.881, -57.875, -171.911)
 
-[node name="OsuSlider" type="PathFollow2D" parent="HandlePath"]
+[node name="TextureRect" type="TextureRect" parent="Xicara/Polygon2D"]
 unique_name_in_owner = true
-position = Vector2(732, 422)
-rotates = false
-loop = false
-
-[node name="OsuSliderArea" type="Area2D" parent="HandlePath/OsuSlider"]
-unique_name_in_owner = true
-position = Vector2(53, -152)
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HandlePath/OsuSlider/OsuSliderArea"]
-position = Vector2(-3, 2)
-shape = SubResource("RectangleShape2D_efc5l")
+offset_left = 93.0
+offset_top = 163.0
+offset_right = 273.0
+offset_bottom = 164.0
+rotation = 3.14159
+scale = Vector2(1, 3.775)
+texture = SubResource("GradientTexture1D_pycnb")
 
 [node name="LeftBorder" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -173,6 +121,6 @@ offset_right = 1128.0
 offset_bottom = 624.0
 text = "NEXT"
 
-[connection signal="mouse_entered" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
-[connection signal="mouse_exited" from="HandlePath/OsuSlider/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]
+[connection signal="mouse_entered" from="Pivot/OsuSliderArea" to="." method="_on_osu_slider_mouse_entered"]
+[connection signal="mouse_exited" from="Pivot/OsuSliderArea" to="." method="_on_osu_slider_mouse_exited"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
