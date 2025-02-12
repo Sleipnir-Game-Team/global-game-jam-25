@@ -1,38 +1,114 @@
-[gd_scene load_steps=42 format=3 uid="uid://lg6kuv3fkktu"]
+[gd_scene load_steps=71 format=3 uid="uid://lg6kuv3fkktu"]
 
 [ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/sfx_globals.gd" id="1_p5jl5"]
 [ext_resource type="AudioStream" uid="uid://rjhj0f5d7tn8" path="res://assets/sounds/coffee/coffee.pour.hot1.mp3" id="2_6b335"]
 [ext_resource type="Script" path="res://addons/sleipnir_audio/sfx/soundqueue.gd" id="2_xabo7"]
 [ext_resource type="AudioStream" uid="uid://k25btjqb180d" path="res://assets/sounds/dialog/player.neutral-0.mp3" id="3_4m03l"]
+[ext_resource type="AudioStream" uid="uid://cjnv5i3xoejqb" path="res://assets/sounds/ui/ui.button.click1.mp3" id="3_sf328"]
 [ext_resource type="AudioStream" uid="uid://dwkw40f2fp1n7" path="res://assets/sounds/coffee/coffee.pour.hot2.mp3" id="3_ypkq2"]
 [ext_resource type="AudioStream" uid="uid://xn5757xbu5nh" path="res://assets/sounds/dialog/player.neutral-1.mp3" id="4_0y1lm"]
 [ext_resource type="AudioStream" uid="uid://paj20ranjqcf" path="res://assets/sounds/coffee/coffee.pour.cold1.mp3" id="4_o81c5"]
+[ext_resource type="AudioStream" uid="uid://dgck42f5vku76" path="res://assets/sounds/ui/ui.button.click2.mp3" id="4_tgnhb"]
+[ext_resource type="AudioStream" uid="uid://cprtcdp2bh5vu" path="res://assets/sounds/ui/ui.button.disabled1.mp3" id="5_7lync"]
 [ext_resource type="AudioStream" uid="uid://dcvbamsx52l18" path="res://assets/sounds/dialog/player.neutral-2.mp3" id="5_18y62"]
 [ext_resource type="AudioStream" uid="uid://cj3n2katfuooj" path="res://assets/sounds/coffee/coffee.pour.cold2.mp3" id="5_n1xy5"]
+[ext_resource type="AudioStream" uid="uid://0lol3crbomtv" path="res://assets/sounds/ui/ui.button.disabled2.mp3" id="6_be44r"]
 [ext_resource type="AudioStream" uid="uid://yrse0rl1wirc" path="res://assets/sounds/dialog/player.neutral-3.mp3" id="6_rrla3"]
 [ext_resource type="AudioStream" uid="uid://dtufuvte54fk5" path="res://assets/sounds/dialog/player.neutral-4.mp3" id="7_0yli3"]
+[ext_resource type="AudioStream" uid="uid://drtt3paahvb5s" path="res://assets/sounds/ui/ui.button.hover1.mp3" id="7_d01g5"]
 [ext_resource type="AudioStream" uid="uid://b6o1ksvs8bsuv" path="res://assets/sounds/coffee/coffee.cube.plop1.mp3" id="7_iohn5"]
+[ext_resource type="AudioStream" uid="uid://brilb5fdullnx" path="res://assets/sounds/ui/ui.button.hover2.mp3" id="8_bn7wr"]
 [ext_resource type="AudioStream" uid="uid://fl2epdpiuxq" path="res://assets/sounds/coffee/coffee.cube.plop2.mp3" id="8_ni0f1"]
 [ext_resource type="AudioStream" uid="uid://dlbodjrtorwk3" path="res://assets/sounds/dialog/boss.neutral-0.mp3" id="8_tt8ml"]
 [ext_resource type="AudioStream" uid="uid://2b4raxbqqrp" path="res://assets/sounds/dialog/boss.neutral-1.mp3" id="9_c1vyp"]
+[ext_resource type="AudioStream" uid="uid://dj67avik4nnwn" path="res://assets/sounds/ui/ui.button.hover3.mp3" id="9_wxtay"]
 [ext_resource type="AudioStream" uid="uid://pey5uuk2v77c" path="res://assets/sounds/coffee/coffee.cube.plop3.mp3" id="9_yrxe5"]
+[ext_resource type="AudioStream" uid="uid://ec7ylr0yaqqd" path="res://assets/sounds/ui/ui.button.hover4.mp3" id="10_c5chg"]
 [ext_resource type="AudioStream" uid="uid://bpyyolnk0jse1" path="res://assets/sounds/coffee/coffee.cup.clink1.mp3" id="10_e8552"]
 [ext_resource type="AudioStream" uid="uid://b24cahwm1gcf" path="res://assets/sounds/dialog/boss.neutral-2.mp3" id="10_lcudm"]
+[ext_resource type="AudioStream" uid="uid://de3nfn7xikbiy" path="res://assets/sounds/ui/ui.game.achievement1.mp3" id="11_1u06e"]
 [ext_resource type="AudioStream" uid="uid://c0py1nyn7eh7" path="res://assets/sounds/coffee/coffee.cup.clink2.mp3" id="11_52rfo"]
 [ext_resource type="AudioStream" uid="uid://bjt18rndyvh3f" path="res://assets/sounds/dialog/boss.neutral-3.mp3" id="11_msbrt"]
 [ext_resource type="AudioStream" uid="uid://b5rjcjtvqn35q" path="res://assets/sounds/dialog/boss.neutral-4.mp3" id="12_22x2y"]
 [ext_resource type="AudioStream" uid="uid://xkydww7pku8o" path="res://assets/sounds/coffee/coffee.cup.clink3.mp3" id="12_k7glk"]
+[ext_resource type="AudioStream" uid="uid://bpqkd5rex72aj" path="res://assets/sounds/ui/ui.game.achievement2.mp3" id="12_ownaf"]
 [ext_resource type="AudioStream" uid="uid://e50e3ludvatw" path="res://assets/sounds/dialog/generic.male.neutral-0.mp3" id="13_meccm"]
+[ext_resource type="AudioStream" uid="uid://dtkqr5i8p6yt3" path="res://assets/sounds/ui/ui.popup.open1.mp3" id="13_o4ac1"]
 [ext_resource type="AudioStream" uid="uid://bpxs5080dkuku" path="res://assets/sounds/coffee/coffee.cup.clink4.mp3" id="13_sn3nd"]
 [ext_resource type="AudioStream" uid="uid://6v5woc0li7lh" path="res://assets/sounds/dialog/generic.male.neutral-1.mp3" id="14_b1bqg"]
+[ext_resource type="AudioStream" uid="uid://buq4ogv0ekf14" path="res://assets/sounds/ui/ui.popup.open2.mp3" id="14_c3al2"]
 [ext_resource type="AudioStream" uid="uid://c812nebk3q8nb" path="res://assets/sounds/dialog/generic.male.neutral-2.mp3" id="15_83vbp"]
+[ext_resource type="AudioStream" uid="uid://diuhm8xw6ih5b" path="res://assets/sounds/ui/ui.screen.back1.mp3" id="15_o6fi0"]
 [ext_resource type="AudioStream" uid="uid://bxji7knaqrlk1" path="res://assets/sounds/dialog/generic.male.neutral-3.mp3" id="16_iwrsp"]
+[ext_resource type="AudioStream" uid="uid://5qsq7d4f43sh" path="res://assets/sounds/ui/ui.screen.back2.mp3" id="16_vis08"]
 [ext_resource type="AudioStream" uid="uid://c51k270y4y121" path="res://assets/sounds/dialog/generic.male.neutral-4.mp3" id="17_mq6fa"]
+[ext_resource type="AudioStream" uid="uid://b8hbuivrdn4es" path="res://assets/sounds/ui/ui.screen.pause.mp3" id="17_pam40"]
+[ext_resource type="AudioStream" uid="uid://cjwxwkwljdlcj" path="res://assets/sounds/ui/ui.screen.resume.mp3" id="18_2shbu"]
 [ext_resource type="AudioStream" uid="uid://uyqq7hv7s7ky" path="res://assets/sounds/dialog/generic.female.neutral-0.mp3" id="18_xae0a"]
+[ext_resource type="AudioStream" uid="uid://dl4c7co35u58g" path="res://assets/sounds/ui/ui.slider.tick1.mp3" id="19_tkm1g"]
 [ext_resource type="AudioStream" uid="uid://df33jvwlv1dyy" path="res://assets/sounds/dialog/generic.female.neutral-1.mp3" id="19_y5v44"]
 [ext_resource type="AudioStream" uid="uid://bi3on5y1s4yy6" path="res://assets/sounds/dialog/generic.female.neutral-2.mp3" id="20_8lu3k"]
+[ext_resource type="AudioStream" uid="uid://b4h5iawurf0cy" path="res://assets/sounds/ui/ui.slider.tick2.mp3" id="20_y0npn"]
 [ext_resource type="AudioStream" uid="uid://c5gc457xdpdt3" path="res://assets/sounds/dialog/generic.female.neutral-3.mp3" id="21_bnkw4"]
+[ext_resource type="AudioStream" uid="uid://bfc7di005kdwg" path="res://assets/sounds/ui/ui.slider.tick3.mp3" id="21_xaum1"]
 [ext_resource type="AudioStream" uid="uid://d1c6frjadwayh" path="res://assets/sounds/dialog/generic.female.neutral-4.mp3" id="22_c6513"]
+[ext_resource type="AudioStream" uid="uid://ccbjb5le1fg62" path="res://assets/sounds/ui/ui.slider.tick4.mp3" id="22_fkfdg"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p7rfe"]
+random_pitch = 1.3
+streams_count = 2
+stream_0/stream = ExtResource("3_sf328")
+stream_1/stream = ExtResource("4_tgnhb")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_s5mxb"]
+random_pitch = 1.3
+streams_count = 2
+stream_0/stream = ExtResource("5_7lync")
+stream_1/stream = ExtResource("6_be44r")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_34umy"]
+random_pitch = 1.3
+streams_count = 4
+stream_0/stream = ExtResource("7_d01g5")
+stream_1/stream = ExtResource("8_bn7wr")
+stream_2/stream = ExtResource("9_wxtay")
+stream_3/stream = ExtResource("10_c5chg")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5pgu3"]
+random_pitch = 1.2
+streams_count = 2
+stream_0/stream = ExtResource("11_1u06e")
+stream_1/stream = ExtResource("12_ownaf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rc6aq"]
+random_pitch = 1.2
+streams_count = 2
+stream_0/stream = ExtResource("13_o4ac1")
+stream_1/stream = ExtResource("14_c3al2")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_32ntg"]
+random_pitch = 1.3
+streams_count = 2
+stream_0/stream = ExtResource("15_o6fi0")
+stream_1/stream = ExtResource("16_vis08")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3ix43"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("17_pam40")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lyoqt"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("18_2shbu")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cdb41"]
+random_pitch = 1.2
+streams_count = 4
+stream_0/stream = ExtResource("19_tkm1g")
+stream_1/stream = ExtResource("20_y0npn")
+stream_2/stream = ExtResource("21_xaum1")
+stream_3/stream = ExtResource("22_fkfdg")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nsxfo"]
 random_pitch = 1.1
@@ -111,13 +187,84 @@ script = ExtResource("1_p5jl5")
 
 [node name="button" type="Node" parent="ui"]
 
-[node name="slider" type="Node" parent="ui"]
+[node name="click" type="Node" parent="ui/button"]
+script = ExtResource("2_xabo7")
+Count = 4
 
-[node name="screen" type="Node" parent="ui"]
+[node name="click" type="AudioStreamPlayer" parent="ui/button/click"]
+stream = SubResource("AudioStreamRandomizer_p7rfe")
+bus = &"sfx"
+
+[node name="disabled" type="Node" parent="ui/button"]
+script = ExtResource("2_xabo7")
+Count = 3
+
+[node name="disabled" type="AudioStreamPlayer" parent="ui/button/disabled"]
+stream = SubResource("AudioStreamRandomizer_s5mxb")
+bus = &"sfx"
+
+[node name="hover" type="Node" parent="ui/button"]
+script = ExtResource("2_xabo7")
+Count = 5
+
+[node name="hover" type="AudioStreamPlayer" parent="ui/button/hover"]
+stream = SubResource("AudioStreamRandomizer_34umy")
+bus = &"sfx"
+
+[node name="game" type="Node" parent="ui"]
+
+[node name="achievement" type="Node" parent="ui/game"]
+script = ExtResource("2_xabo7")
+Count = 2
+
+[node name="achievement" type="AudioStreamPlayer" parent="ui/game/achievement"]
+stream = SubResource("AudioStreamRandomizer_5pgu3")
+bus = &"sfx"
 
 [node name="popup" type="Node" parent="ui"]
 
-[node name="game" type="Node" parent="ui"]
+[node name="open" type="Node" parent="ui/popup"]
+script = ExtResource("2_xabo7")
+Count = 2
+
+[node name="open" type="AudioStreamPlayer" parent="ui/popup/open"]
+stream = SubResource("AudioStreamRandomizer_rc6aq")
+bus = &"sfx"
+
+[node name="screen" type="Node" parent="ui"]
+
+[node name="back" type="Node" parent="ui/screen"]
+script = ExtResource("2_xabo7")
+Count = 2
+
+[node name="back" type="AudioStreamPlayer" parent="ui/screen/back"]
+stream = SubResource("AudioStreamRandomizer_32ntg")
+bus = &"sfx"
+
+[node name="pause" type="Node" parent="ui/screen"]
+script = ExtResource("2_xabo7")
+Count = 2
+
+[node name="pause" type="AudioStreamPlayer" parent="ui/screen/pause"]
+stream = SubResource("AudioStreamRandomizer_3ix43")
+bus = &"sfx"
+
+[node name="resume" type="Node" parent="ui/screen"]
+script = ExtResource("2_xabo7")
+Count = 2
+
+[node name="open" type="AudioStreamPlayer" parent="ui/screen/resume"]
+stream = SubResource("AudioStreamRandomizer_lyoqt")
+bus = &"sfx"
+
+[node name="slider" type="Node" parent="ui"]
+
+[node name="tick" type="Node" parent="ui/slider"]
+script = ExtResource("2_xabo7")
+
+[node name="tick" type="AudioStreamPlayer" parent="ui/slider/tick"]
+stream = SubResource("AudioStreamRandomizer_cdb41")
+bus = &"sfx"
 
 [node name="coffee" type="Node" parent="."]
 
