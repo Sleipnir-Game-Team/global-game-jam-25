@@ -1,99 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxodpak5ddnmj"]
+[gd_scene load_steps=5 format=3 uid="uid://dxodpak5ddnmj"]
 
 [ext_resource type="Script" path="res://coffee/hot/1_sugar/sugar.gd" id="1_c08lw"]
 [ext_resource type="Texture2D" uid="uid://jwtg2bygom6f" path="res://assets/Assets finalizados/Xicara.png" id="2_0gwra"]
-[ext_resource type="Texture2D" uid="uid://dmrjq0q6638ve" path="res://assets/Assets finalizados/Acucar B.png" id="3_2dqam"]
-[ext_resource type="Texture2D" uid="uid://dqudcu0iik6h3" path="res://assets/Assets finalizados/Colher B.png" id="4_hqkxp"]
+[ext_resource type="PackedScene" uid="uid://rqrtqk0thkyf" path="res://coffee/hot/1_sugar/sugar_spoon.tscn" id="4_iekl4"]
 [ext_resource type="Texture2D" uid="uid://dlvgahjvmykfk" path="res://assets/Assets finalizados/Acucar A.png" id="4_whm7a"]
-[ext_resource type="Texture2D" uid="uid://cn8qk822jnetp" path="res://assets/Assets finalizados/Colher A.png" id="6_kx6sa"]
-
-[sub_resource type="Animation" id="Animation_5sq65"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AddSugarButton:icon")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_2dqam")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColherA:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_hqkxp")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColherA:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_552tb"]
-resource_name = "sugar_animation"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AddSugarButton:icon")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("3_2dqam"), ExtResource("4_whm7a")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColherA:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("4_hqkxp"), ExtResource("6_kx6sa")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColherA:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7law2"]
-_data = {
-"RESET": SubResource("Animation_5sq65"),
-"sugar_animation": SubResource("Animation_552tb")
-}
 
 [node name="Sugar" type="Node2D"]
 script = ExtResource("1_c08lw")
+sugar_spoon = ExtResource("4_iekl4")
 
 [node name="Xicara" type="Sprite2D" parent="."]
 position = Vector2(488.23, 633.045)
@@ -105,7 +19,7 @@ offset_left = 900.0
 offset_top = 296.0
 offset_right = 1234.0
 offset_bottom = 777.0
-icon = ExtResource("3_2dqam")
+icon = ExtResource("4_whm7a")
 
 [node name="SugarCounterLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -121,18 +35,6 @@ offset_top = 879.0
 offset_right = 1794.0
 offset_bottom = 1006.0
 text = "NEXT"
-
-[node name="sugar_animation" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_7law2")
-}
-
-[node name="ColherA" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(529, 429)
-rotation = -1.5708
-texture = ExtResource("4_hqkxp")
 
 [connection signal="pressed" from="AddSugarButton" to="." method="_on_add_sugar_button_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

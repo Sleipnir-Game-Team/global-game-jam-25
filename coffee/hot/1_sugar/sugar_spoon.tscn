@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://rqrtqk0thkyf"]
+
+[ext_resource type="Script" path="res://coffee/hot/1_sugar/sugar_animation.gd" id="1_lkpbf"]
+[ext_resource type="Texture2D" uid="uid://dqudcu0iik6h3" path="res://assets/Assets finalizados/Colher B.png" id="2_jvbo6"]
+[ext_resource type="Texture2D" uid="uid://cn8qk822jnetp" path="res://assets/Assets finalizados/Colher A.png" id="4_3f0yk"]
+[ext_resource type="Texture2D" uid="uid://crqa38t2m7pqn" path="res://assets/acuca.png" id="5_ydndc"]
+[ext_resource type="Script" path="res://coffee/hot/1_sugar/sugar_particles.gd" id="7_11xkm"]
+
+[sub_resource type="Animation" id="Animation_5sq65"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_552tb"]
+resource_name = "sugar_animation"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sugar_particles")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColherA:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_jvbo6"), ExtResource("4_3f0yk")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColherA:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7law2"]
+_data = {
+"RESET": SubResource("Animation_5sq65"),
+"sugar_animation": SubResource("Animation_552tb")
+}
+
+[node name="Sugar_Spoon" type="Node2D"]
+position = Vector2(441, 437)
+
+[node name="sugar_animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_7law2")
+}
+script = ExtResource("1_lkpbf")
+
+[node name="ColherA" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(88, -8)
+rotation = -1.5708
+texture = ExtResource("4_3f0yk")
+
+[node name="sugar_particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 400
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.69
+texture = ExtResource("5_ydndc")
+emission_shape = 1
+emission_sphere_radius = 42.47
+scale_amount_min = 0.25
+color = Color(0.933333, 0.933333, 0.933333, 1)
+script = ExtResource("7_11xkm")
+
+[connection signal="finished" from="sugar_particles" to="sugar_particles" method="_on_finished"]
